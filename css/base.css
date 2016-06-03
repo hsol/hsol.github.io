@@ -205,9 +205,6 @@ article#article section.content header ~ hr:before {
     left:-50%;
     border-bottom: 0.2em solid #1abc9c;
 }
-article#article section.article_01 { opacity:0; }
-article#article section.article_03 { opacity:0; }
-article#article section.article_05 { opacity:0; }
 article#article section.article_01 .bg_profile {
     display:inline-block;
     vertical-align: top;
