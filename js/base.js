@@ -70,10 +70,10 @@
             if(article_01.offsetTop + article_01.clientHeight <= document.body.scrollTop){
                 article_01.style.opacity = 1;
             } else {
-                article_01.style.opacity = parseFloat(article_01.style.opacity || 0) + 0.04;
+                article_01.style.opacity = parseFloat(article_01.style.opacity || 0) + 0.1;
             }
         } else {
-            article_01.style.opacity = 0;
+            article_01.style.opacity = 0.5;
         }
 
         var article_03 = document.querySelector("section.article_03");
@@ -81,10 +81,10 @@
             if(article_03.offsetTop + article_03.clientHeight <= document.body.scrollTop){
                 article_03.style.opacity = 1;
             } else {
-                article_03.style.opacity = parseFloat(article_03.style.opacity || 0) + 0.04;
+                article_03.style.opacity = parseFloat(article_03.style.opacity || 0) + 0.1;
             }
         } else {
-            article_03.style.opacity = 0;
+            article_03.style.opacity = 0.5;
         }
 
         var article_05 = document.querySelector("section.article_05");
@@ -92,10 +92,10 @@
             if(article_05.offsetTop + article_05.clientHeight <= document.body.scrollTop){
                 article_05.style.opacity = 1;
             } else {
-                article_05.style.opacity = parseFloat(article_05.style.opacity || 0) + 0.04;
+                article_05.style.opacity = parseFloat(article_05.style.opacity || 0) + 0.1;
             }
         } else {
-            article_05.style.opacity = 0;
+            article_05.style.opacity = 0.5;
         }
     };
 
