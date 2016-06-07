@@ -3,6 +3,8 @@
     base._global = {};
 
     window.onload = function(){
+        var global = new GlobalString(language);
+
         if (navigator.appName == 'Netscape')
             var language = navigator.language === "ko" ? "KOR" : "ENG";
         else
@@ -21,6 +23,23 @@
             var userName = document.getElementsByName("userName")[0];
             var userEmail = document.getElementsByName("userEmail")[0];
             var desc = document.getElementsByName("desc")[0];
+
+            console.log(global);
+
+            if(!userName.value){
+                alert(global.strings._errors.PLEASE_INSERT_NAME[_global.language]);
+                return;
+            }
+
+            if(!userEmail.value){
+                alert(global.strings._errors.PLEASE_INSERT_EMAIL[_global.language]);
+                return;
+            }
+
+            if(!desc.value){
+                alert(global.strings._errors.PLEASE_INSERT_CONTENTS[_global.language]);
+                return;
+            }
 
             var now = new Date();
 
@@ -104,6 +123,8 @@
             var language = language.toUpperCase();
             var global = new GlobalString(language);
             global.setAllGlobalValue();
+
+            _global.language = language;
         }else{
             console.error("Please import Global.js first.");
         }

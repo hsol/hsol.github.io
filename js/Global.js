@@ -9,6 +9,18 @@
                 LANGUAGE_NOT_SUPPORTED:{
                     KOR:"지원하지 않는 언어입니다.",
                     ENG:"The language is not supported."
+                },
+                PLEASE_INSERT_NAME: {
+                    KOR:"이름을 입력해주세요.",
+                    ENG:"Please insert your name first."
+                },
+                PLEASE_INSERT_EMAIL: {
+                    KOR:"메일을 입력해주세요,",
+                    ENG:"Please insert your e-mail."
+                },
+                PLEASE_INSERT_CONTENTS: {
+                    KOR:"내용을 입력해주세요.",
+                    ENG:"Please insert any contents."
                 }
             },
             title:{
@@ -154,6 +166,18 @@
             sent_ok: {
                 KOR: "성공적으로 전송 되었습니다.",
                 ENG: "Message was sent OK"
+            },
+            erdmodeling: {
+                KOR: "ERD를 이용한 DB 모델링",
+                ENG: "Database modeling by using ERD"
+            },
+            facebookmeetup: {
+                KOR: "페이스북 개발자 그룹의 첫 번째 미트업",
+                ENG: "First meet-up for Korean facebook developer group"
+            },
+            teheranmeet: {
+                KOR: "테헤란로 커피클럽(아침에 하는 스타트업 네트워킹 모임)_36th",
+                ENG: "Teheran-ro Coffee Club(Venture Networking meeting)_36th"
             }
         };
 
