@@ -123,6 +123,10 @@
                 KOR: "개월",
                 ENG: "Month"
             },
+            day: {
+                KOR: "일",
+                ENG: "Day"
+            },
             experience: {
                 KOR: "경험 및 수상",
                 ENG: "Experience"
@@ -178,6 +182,14 @@
             teheranmeet: {
                 KOR: "테헤란로 커피클럽(아침에 하는 스타트업 네트워킹 모임)_36th",
                 ENG: "Teheran-ro Coffee Club(Venture Networking meeting)_36th"
+            },
+            android: {
+                KOR: "안드로이드",
+                ENG: "Android"
+            },
+            ios: {
+                KOR: "아이폰",
+                ENG: "iOS"
             }
         };
 
