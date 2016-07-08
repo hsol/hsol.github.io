@@ -92,6 +92,8 @@ html, body {
     color:#2ecc71;
 }
 
+.hidden { display:none; }
+
 .media1024{display:none;}
 .media768{display:none;}
 .media425{display:none;}
