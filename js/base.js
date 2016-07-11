@@ -60,6 +60,43 @@
             });
         });
 
+        var slideButtons = document.querySelectorAll("#portfolio article ul .slide");
+        for(var idx in slideButtons) {
+            if(slideButtons[idx].className != undefined) {
+                slideButtons[idx].style.display = "block";
+                slideButtons[idx].addEventListener("click", function(e){
+                    if(e.target.className.indexOf("left") >= 0) {
+                        document.querySelector("#portfolio article ul").appendChild(document.querySelector("#portfolio article ul li"));
+                    } else if (e.target.className.indexOf("right") >= 0) {
+                        document.querySelector("#portfolio article ul").insertBefore(document.querySelector("#portfolio article ul li:last-child"), document.querySelector("#portfolio article ul li"));
+                    }
+                });
+            }
+        }
+
+        window.onresize();
+        window.onscroll();
+    };
+
+    window.onresize = function(){
+        var article = document.querySelector("#portfolio article");
+        var slides = document.querySelectorAll("#portfolio article ul .slide");
+        var firstLi = document.querySelector("#portfolio article ul li");
+
+        if(window.innerWidth > 375) {
+            slides[0].style.display = "block";
+            slides[1].style.display = "block";
+            slides[0].style.height = firstLi.clientHeight + em(firstLi) * 0.9 + "px";
+            slides[1].style.height = firstLi.clientHeight + em(firstLi) * 0.9 + "px";
+            article.style.height = firstLi.clientHeight + em(firstLi) * 0.9 + "px";
+            article.style.overflow = "hidden";
+        }
+        else {
+            slides[0].style.display = "none";
+            slides[1].style.display = "none";
+            article.style.height = "";
+            article.style.overflow = "auto";
+        }
     };
 
     window.onscroll = function(){
@@ -129,4 +166,15 @@
             console.error("Please import Global.js first.");
         }
     };
+
+    function em(parentElement)
+    {
+        parentElement = parentElement || document.body;
+        var div = document.createElement('div');
+        div.style.width = "1000em";
+        parentElement.appendChild(div);
+        var pixels = div.offsetWidth / 1000;
+        parentElement.removeChild(div);
+        return pixels;
+    }
 })(window);

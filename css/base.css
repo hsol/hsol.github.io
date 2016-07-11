@@ -309,12 +309,35 @@ article#article section.article_04 ul li p {
 article#article section.article_05 {
     text-align:center;
 }
+article#article section.article_05 article { height:100%; }
 article#article section.article_05 ul {
+    position:relative;
     display:inline-block;
     width:100%;
     font-size:0;
+    overflow:hidden;
 }
-
+article#article section.article_05 ul .slide {
+    width:2em;
+    height:100%;
+    position:absolute;
+    display:none;
+    cursor:pointer;
+}
+article#article section.article_05 ul .slide_left {
+    left:0;
+    background-image:url('../images/ic_arrow_left.png');
+    background-repeat: no-repeat;
+    background-position:0 center;
+    background-size:100% auto;
+}
+article#article section.article_05 ul .slide_right {
+    right:0;
+    background-image:url('../images/ic_arrow_right.png');
+    background-repeat: no-repeat;
+    background-position:0 center;
+    background-size:100% auto;
+}
 article#article section.article_05 ul li {
     display:inline-block;
     width:25%;
@@ -322,6 +345,7 @@ article#article section.article_05 ul li {
     position:relative;
 
     margin:0.9em;
+    transition-duration: 0.3s;
 }
 article#article section.article_05 ul li .bg_cover { background-color:rgba(0,0,0,0.7); display:none; height:99%; height:calc(100% - 0.5ex); }
 article#article section.article_05 ul li:hover .bg_cover { display:block; }
@@ -445,13 +469,17 @@ footer#footer {
    ========================================================================== */
 @media only screen and (max-width:1600px ) {
     article#article section.article_05 ul {
-        width:80%;
+        width:90%;
+        font-size:1rem;
+        padding-left:2em;
+        padding-right:2em;
     }
 
     article#article section.article_05 ul li {
         width:25%;
         width:calc(33.3% - 2em);
     }
+
 }
 
 @media only screen and (max-width:1024px ) {
