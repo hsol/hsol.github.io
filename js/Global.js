@@ -190,6 +190,10 @@
             ios: {
                 KOR: "아이폰",
                 ENG: "iOS"
+            },
+            nexters: {
+                KOR: "넥스터즈 9기 활동",
+                ENG: "NEXTERS 9th membership"
             }
         };
 
