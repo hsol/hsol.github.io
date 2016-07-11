@@ -345,7 +345,6 @@ article#article section.article_05 ul li {
     position:relative;
 
     margin:0.9em;
-    transition-duration: 0.3s;
 }
 article#article section.article_05 ul li .bg_cover { background-color:rgba(0,0,0,0.7); display:none; height:99%; height:calc(100% - 0.5ex); }
 article#article section.article_05 ul li:hover .bg_cover { display:block; }
