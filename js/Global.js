@@ -194,6 +194,10 @@
             nexters: {
                 KOR: "넥스터즈 9기 활동",
                 ENG: "NEXTERS 9th membership"
+            },
+            unithon_3: {
+                KOR: "제 3회 유니톤 참가(수상)",
+                ENG: "3th Unithon (Awards)"
             }
         };
 
