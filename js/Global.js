@@ -24,8 +24,8 @@
                 }
             },
             title:{
-                KOR:"안녕하세요, <br class='media768'><span class='text_green'>임한솔</span> 입니다.",
-                ENG:"Hello World, I'm <span class='text_green'>HansolLim</span>"
+                KOR:"안녕하세요, <br class='media768'><b class='text_green'>임한솔</b> 입니다.",
+                ENG:"Hello World, I'm <b class='text_green'>HansolLim</b>."
             },
             sub_title:{
                 KOR:"아마추어의 창의력과 프로의 기술을 가진 사람",
