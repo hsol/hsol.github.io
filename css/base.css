@@ -175,7 +175,7 @@ header#header section#title span{
     color:#FFFFFF;
     font-size:1em;
 }
-header#header section#title b{font-size:5rem;}
+header#header section#title b{font-size:1em;}
 
 header#header section#sub_title {
     width:100%;
