@@ -168,6 +168,8 @@ header#header div.title {
 }
 header#header section#title {
     text-align:center;
+    color:#FFFFFF;
+    font-size:5em;
 }
 header#header section#title span{
     color:#FFFFFF;
