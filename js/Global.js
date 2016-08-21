@@ -198,6 +198,14 @@
             unithon_3: {
                 KOR: "제 3회 유니톤 참가(수상)",
                 ENG: "3th Unithon (Awards)"
+            },
+            military_title: {
+                KOR: "훈련중입니다.",
+                ENG: "In army"
+            },
+            military_content: {
+                KOR: "8월 25일 ~ 9월 22일 훈련입니다.<br>훈련소 교육 마치고 돌아오겠습니다.",
+                ENG: "8/25 ~ 9/22<br>I'm in training at army and I'll be back soon."
             }
         };
 

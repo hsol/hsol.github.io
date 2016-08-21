@@ -182,6 +182,21 @@
         } else {
             article_05.style.opacity = 0.5;
         }
+
+        var now = new Date();
+        if(now.getFullYear() == "2016" && new Date("2016-08-24") < now && now < new Date("2016-09-23")) {
+            if (document.body.scrollTop > 0) {
+                document.getElementById("aside").className = "fade_out show";
+                clearTimeout(window._global.timeout);
+                window._global.timeout = setTimeout(function () {
+                    document.getElementById("aside").style.display = "none";
+                }, 1000);
+            } else {
+                clearTimeout(window._global.timeout);
+                document.getElementById("aside").style.display = "block";
+                document.getElementById("aside").className = "fade_in show";
+            }
+        }
     };
 
     _global.setGlobalString = function(language){
