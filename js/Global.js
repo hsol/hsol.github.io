@@ -206,6 +206,10 @@
             military_content: {
                 KOR: "8월 25일 ~ 9월 22일 훈련입니다.<br>훈련소 교육 마치고 돌아오겠습니다.",
                 ENG: "8/25 ~ 9/22<br>I'm in training at army and I'll be back soon."
+            },
+            nexters_op: {
+                KOR: "넥스터즈 10기 운영진(CTO)",
+                ENG: "NEXTERS 10th CTO"
             }
         };
 
