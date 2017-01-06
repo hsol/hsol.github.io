@@ -212,28 +212,28 @@
         ENG: "NEXTERS 10th CTO"
       },
       joincnttech: {
-        KOR: "<a href='http://cntt.co.kr/'>씨엔티테크(주)</a> 입사",
-        ENG: "Joined on <a href='http://cntt.co.kr/'>CNT TECH</a>"
+        KOR: "<a target='_blank' href='http://cntt.co.kr/'>씨엔티테크(주)</a> 입사",
+        ENG: "Joined on <a target='_blank' href='http://cntt.co.kr/'>CNT TECH</a>"
       },
       leftcnttech: {
-        KOR: "<a href='http://cntt.co.kr/'>씨엔티테크(주)</a> 퇴사",
-        ENG: "Left from <a href='http://cntt.co.kr/'>CNT TECH</a>"
+        KOR: "<a target='_blank' href='http://cntt.co.kr/'>씨엔티테크(주)</a> 퇴사",
+        ENG: "Left from <a target='_blank' href='http://cntt.co.kr/'>CNT TECH</a>"
       },
       joinridi: {
-        KOR: "<a href='http://www.ridicorp.com/'>리디(주)</a> 입사",
-        ENG: "Joined on <a href='http://www.ridicorp.com/'>RIDI</a>"
+        KOR: "<a target='_blank' href='http://www.ridicorp.com/'>리디(주)</a> 입사",
+        ENG: "Joined on <a target='_blank' href='http://www.ridicorp.com/'>RIDI</a>"
       },
       naverdeview2016: {
-        KOR: "<a href='http://hsol.tistory.com/934'>네이버 D2 DEVIEW 2016</a>",
-        ENG: "<a href='http://hsol.tistory.com/934'>Naver D2 DEVIEW 2016</a>"
+        KOR: "<a target='_blank' href='http://hsol.tistory.com/934'>네이버 D2 DEVIEW 2016</a>",
+        ENG: "<a target='_blank' href='http://hsol.tistory.com/934'>Naver D2 DEVIEW 2016</a>"
       },
       gdgdevfest2016: {
-        KOR: "<a href='http://hsol.tistory.com/936'>GDG Devfest Seoul 2016</a>",
-        ENG: "<a href='http://hsol.tistory.com/936'>GDG Devfest Seoul 2016</a>"
+        KOR: "<a target='_blank' href='http://hsol.tistory.com/936'>GDG Devfest Seoul 2016</a>",
+        ENG: "<a target='_blank' href='http://hsol.tistory.com/936'>GDG Devfest Seoul 2016</a>"
       },
       xecon2016: {
-        KOR: "<a href='http://hsol.tistory.com/937'>XEcon 2016</a>",
-        ENG: "<a href='http://hsol.tistory.com/937'>XEcon 2016</a>"
+        KOR: "<a target='_blank' href='http://hsol.tistory.com/937'>XEcon 2016</a>",
+        ENG: "<a target='_blank' href='http://hsol.tistory.com/937'>XEcon 2016</a>"
       }
     };
 

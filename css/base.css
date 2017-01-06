@@ -71,6 +71,20 @@ html, body {
     height:100%;
 }
 
+p > a {
+    color:inherit;
+    padding-right:1.4em;
+    background-image:url(../images/external.png);
+    background-position: top right;
+    background-size:1em 1em;
+    background-repeat:no-repeat;
+}
+
+p > a:hover, p > a:active, p > a:visited {
+    text-decoration: underline;
+    text-shadow: 2px 2px #000000;
+}
+
 .bg_cover{
     display:block;
 
