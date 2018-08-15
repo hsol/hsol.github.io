@@ -7,6 +7,7 @@
     "npm": ">= 6.3.0"
   },
   "scripts": {
+    "preinstall": "npm run clean",
     "prestart": "webpack --mode development",
     "start": "webpack-dev-server",
     "prebuild": "rm -rf dist",
