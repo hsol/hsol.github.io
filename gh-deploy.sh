@@ -6,3 +6,4 @@ then
 fi
 git remote set-url origin git@github.com:hsol/hsol.github.io.git
 git subtree push --prefix $1 origin gh-pages
+git reset HEAD~
