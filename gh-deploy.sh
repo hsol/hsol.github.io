@@ -5,5 +5,9 @@ then
   exit 1
 fi
 git remote set-url origin git@github.com:hsol/hsol.github.io.git
+
+git push --delete origin master
+git branch -d master
+
 git subtree push --prefix $1 origin master
 git reset HEAD~
