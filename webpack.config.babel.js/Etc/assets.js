@@ -41,8 +41,8 @@ export default () => {
          new HtmlWebpackExcludeAssetsPlugin(),
          new CopyWebpackPlugin([
             {
-               from: `${pathConst.base}/assets`,
-               to: `${pathConst.dist}`,
+               from: pathConst.assets,
+               to: pathConst.dist,
             }
          ])
       ]
