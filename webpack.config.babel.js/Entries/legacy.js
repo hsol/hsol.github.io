@@ -3,7 +3,6 @@ import { ProvidePlugin } from 'webpack'
 
 import pathConst from '../Constants/path'
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import ExtractTextPlugin from "extract-text-webpack-plugin";
 
 export default {
    entry: {
