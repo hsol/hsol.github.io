@@ -9,9 +9,11 @@
   "scripts": {
     "prestart": "webpack --mode development",
     "start": "webpack-dev-server",
-    "build": "rm -rf dist && webpack --mode production && rm style.*.js",
-    "build-dev": "rm -rf dist && webpack --mode development && rm style.*.js",
-    "deploy": "npm run build && ./gh-deploy.sh dist",
+    "prebuild": "rm -rf dist",
+    "build": "webpack --mode production",
+    "build-dev": "webpack --mode development",
+    "postbuild": "cd dist && rm style.*.js",
+    "deploy": "npm run build && git add ./dist && git commit -m 'Initial dist subtree commit' && ./gh-deploy.sh dist",
     "analyze": "webpack --mode production --analyze",
     "clean": "rm -rf node_modules && git checkout package-lock.json",
     "test": "echo \"Error: no test specified\" && exit 1"
