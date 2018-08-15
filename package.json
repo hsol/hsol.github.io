@@ -11,6 +11,7 @@
     "start": "webpack-dev-server",
     "build": "rm -rf dist && webpack --mode production",
     "build-dev": "rm -rf dist && webpack --mode development",
+    "deploy": "./gh-deploy.sh dist",
     "analyze": "webpack --mode production --analyze",
     "clean": "rm -rf node_modules && git checkout package-lock.json",
     "test": "echo \"Error: no test specified\" && exit 1"
