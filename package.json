@@ -14,7 +14,7 @@
     "build": "webpack --mode production",
     "build-dev": "webpack --mode development",
     "postbuild": "cd dist && rm style.*.js",
-    "deploy": "npm run build && git add ./dist && git commit -m 'Initial dist subtree commit' && ./gh-deploy.sh dist",
+    "deploy": "npm run build && git add ./dist && git commit -m 'Initial dist subtree commit' && ./deploy-on-master.sh dist",
     "analyze": "webpack --mode production --analyze",
     "clean": "rm -rf node_modules && git checkout package-lock.json",
     "test": "echo \"Error: no test specified\" && exit 1"
