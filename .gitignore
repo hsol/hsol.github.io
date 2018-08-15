@@ -194,7 +194,7 @@ $RECYCLE.BIN/
 # Packages
 *.egg
 *.egg-info
-dist/
+# dist/
 build/
 eggs/
 parts/
@@ -223,3 +223,7 @@ pip-log.txt
 .idea
 .idea/
 .idea/*
+
+
+# NPM
+node_modules

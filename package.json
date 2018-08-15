@@ -1,0 +1,61 @@
+{
+  "name": "hansollim-portfolio",
+  "version": "0.0.1",
+  "description": "Portfolio of HansolLim in South Korea, Web developer",
+  "main": "index.js",
+  "engines": {
+    "npm": ">= 6.3.0"
+  },
+  "scripts": {
+    "prestart": "webpack --mode development",
+    "start": "webpack-dev-server",
+    "build": "rm -rf dist && webpack --mode production",
+    "build-dev": "rm -rf dist && webpack --mode development",
+    "analyze": "webpack --mode production --analyze",
+    "clean": "rm -rf node_modules && git checkout package-lock.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsol/hsol.github.io.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "HansolLim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hsol/hsol.github.io/issues"
+  },
+  "homepage": "https://github.com/hsol/hsol.github.io#readme",
+  "dependencies": {
+    "react": "^16.4.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "bulma": "^0.7.1",
+    "concurrently": "^3.6.1",
+    "copy-webpack-plugin": "latest",
+    "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-webpack-exclude-assets-plugin": "0.0.7",
+    "html-webpack-plugin": "^3.2.0",
+    "node-notifier": "^5.2.1",
+    "node-sass": "^4.9.3",
+    "normalize.css": "^8.0.0",
+    "react-hot-loader": "^4.3.4",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.22.1",
+    "url-loader": "^1.1.0",
+    "webpack": "^4.16.5",
+    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5",
+    "webpack-merge": "^4.1.4"
+  }
+}
