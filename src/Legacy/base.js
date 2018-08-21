@@ -1,3 +1,5 @@
+import 'babel-polyfill'
+
 import $ from 'jquery'
 import Typed from 'typed.js'
 
