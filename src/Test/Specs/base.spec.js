@@ -1,7 +1,6 @@
 import server from '../server'
-import base from '../../Legacy/base'
 
-it('base.em', async () => {
+it('index.html should be 200 response', async () => {
    return new Promise((resolve) => {
       server.get('/')
          .then(res => {
