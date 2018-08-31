@@ -1,309 +1,423 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
 
-    <title>임한솔 (About HansolLim)</title>
+  <title>임한솔 (About HansolLim)</title>
 
-    <link rel="apple-touch-icon" sizes="57x57" href="./images/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="./images/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="./images/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="./images/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="./images/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="./images/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="./images/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="./images/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="./images/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="./images/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="./images/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./images/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./images/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./images/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./images/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./images/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./images/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./images/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./images/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
 
-    <link rel="manifest" href="./manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="dist/images/favicon/ms-icon-144x144.png">
+  <link rel="manifest" href="./manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="dist/images/favicon/ms-icon-144x144.png">
 
-    <meta property="og:title" content="Hello Word, I'm HansolLim">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="http://hsol.github.io">
-    <meta property="og:description" content="With amateur creativity and professional skills.">
-    <meta property="og:image" content="./images/favicon/ms-icon-310x310.png">
-    <meta property="og:image:width" content="310">
-    <meta property="og:image:height" content="310">
+  <meta property="og:title" content="Hello Word, I'm HansolLim">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="http://hsol.github.io">
+  <meta property="og:description" content="With amateur creativity and professional skills.">
+  <meta property="og:image" content="./images/favicon/ms-icon-310x310.png">
+  <meta property="og:image:width" content="310">
+  <meta property="og:image:height" content="310">
 </head>
 <body>
-<img class="hidden" src="./images/preview.jpg">
-<header id="header">
-    <section class="bg_cover"></section>
-    <div class="title">
-        <section id="title" data-global="title">안녕하세요, 임한솔 입니다.</section>
-        <section id="sub_title" data-global="sub_title">아마추어의 창의력과 프로의 기술을 가진 사람</section>
-    </div>
-</header>
-<nav id="nav">
-    <div class="jail">
-        <section class="logo"><a href="#" data-global="name_value">임한솔</a></section>
-        <section class="language">
-            <label data-global="language">언어</label>:
-            <select name="language">
-                <option value="KOR">한국어</option>
-                <option value="ENG">English</option>
-            </select>
-        </section>
-    </div>
+<nav class="navbar is-transparent is-darken-5 is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item level-left z-index-1" href="/">
+      <div class="level-item image is-24x24 is-marginless">
+        <img src="./images/favicon/ms-icon-310x310.png">
+      </div>
+      <span class="has-margin-right-10 is-hidden-mobile"></span>
+      <span class="level-item is-size-4 is-hidden-mobile has-text-white">임한솔</span>
+    </a>
+    <a role="button" class="navbar-burger z-index-1 has-text-white" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
 </nav>
-<article id="article">
-    <section id="profile" class="section-content article_01 jail">
-        <header data-global="personal">프로필</header>
+<div class="navbar is-transparent"></div>
+<section class="hero is-success is-fullheight has-bg-full-1 is-darken-4">
+  <div class="hero-body">
+    <div class="container z-index-1">
+      <h1 class="title has-text-shadow-2 is-size-1-desktop is-size-3-tablet is-size-5-mobile">
+        안녕하세요,<br class="is-hidden-tablet">
+        <span class="has-text-primary is-size-1">임한솔</span>
+        입니다.</h1>
+      <h2 class="subtitle is-size-3">
+        <span class="has-margin-right-10 is-hidden-mobile"></span>
+        <span class="tag is-light">매 순간 스스로 업그레이드 하는 개발자</span>
+        <span class="tag is-light">언어 가리지 않는 유연한 개발자</span>
+        <span class="tag is-light">디자인 감각을 가진 부드러운 개발자</span>
+      </h2>
+    </div>
+  </div>
+</section>
+<section class="section has-background-white">
+  <header class="title has-text-centered">프로필</header>
+  <hr class="header-assistant"/>
+  <article class="container columns is-1-tablet">
+    <div class="column is-clearfix">
+      <figure class="image is-384x384 is-pulled-right is-desktop">
+        <img src="./images/profile.png">
+      </figure>
+    </div>
+    <ul class="column is-size-5">
+      <li class="has-margin-bottom-10">
+        <label class="is-size-7" data-global="name">이름</label>. <span data-global="name_value">임한솔</span>
+      </li>
+      <li class="has-margin-bottom-10">
+        <label class="is-size-7" data-global="birth">출생년도</label>. <span
+          data-global="birth_value">1996년 05월 20일</span>
+      </li>
+      <li class="has-margin-bottom-10">
+        <label class="is-size-7" data-global="email">이메일</label>. <a href="mailto:dev.hansollim@gmail.com">dev.hansollim@gmail.com</a>
+      </li>
+      <li>
         <hr>
-        <article>
-            <div class="bg_profile"></div>
-            <ul class="">
-                <li>
-                    <label data-global="name">이름</label>. <span data-global="name_value">임한솔</span>
-                </li>
-                <li>
-                    <label data-global="birth">출생년도</label>. <span data-global="birth_value">1996년 05월 20일</span>
-                </li>
-                <li>
-                    <label data-global="email">이메일</label>. <span>dev.hansollim@gmail.com</span>
-                </li>
-                <li>
-                    <label data-global="blog">블로그</label>. <a href="http://hsol.tistory.com" target="_blank"><span>hsol.tistory.com</span></a>
-                </li>
-            </ul>
-        </article>
-        <footer></footer>
-    </section>
-    <section id="experience" class="section-content article_02 bg_fix">
-        <div class="jail">
-            <header data-global="experience">경험</header>
-            <hr>
-            <article>
-                <ul>
-                    <li>
-                        <h2>2017</h2>
-                        <p data-global="nexters10th">넥스터즈 10기 활동</p>
-                        <h2>2016</h2>
-                        <p data-global="xecon2016"><a target="_blank" href="http://hsol.tistory.com/937">XEcon 2016</a></p>
-                        <p data-global="joinridi"><a target="_blank" href='http://www.ridicorp.com/'>리디(주)</a> 입사</p>
-                        <p data-global="leftcnttech"><a target="_blank" href='http://cntt.co.kr/'>씨엔티테크(주)</a> 퇴사</p>
-                        <p data-global="gdgdevfest2016"><a target="_blank" href="http://hsol.tistory.com/936">GDG Devfest Seoul 2016</a></p>
-                        <p data-global="naverdeview2016"><a target="_blank" href="http://hsol.tistory.com/934">네이버 D2 DEVIEW 2016</a></p>
-                        <p data-global="military">8월 25일 ~ 9월 22일 훈련소</p>
-                        <p data-global="nexters_op">넥스터즈 10기 운영진(CTO)</p>
-                        <p data-global="unithon_3">제 3회 유니톤 참가(수상)</p>
-                        <p data-global="nexters9th">넥스터즈 9기 활동</p>
-                        <h2>2015</h2>
-                        <p data-global="erdmodeling">ERD를 이용한 DB 모델링 세미나</p>
-                        <p data-global="facebookmeetup">페이스북 개발자 그룹의 첫 번째 미트업</p>
-                        <p data-global="teheranmeet">테헤란로 커피클럽(아침에 하는 스타트업 네트워킹 모임)_36th</p>
-                        <h2>2014</h2>
-                        <p data-global="joincnttech"><a target="_blank" href='http://cntt.co.kr/'>씨엔티테크(주)</a> 입사</p>
-                        <p data-global="datahackathon">2014 빅데이톤 경진대회(수상)</p>
-                        <p>Google HackFair</p>
-                        <h2>2013</h2>
-                        <p><span data-global="googlehackathon">구글 학생 개발자 해커톤</span> 2013</p>
-                        <h2>2012</h2>
-                        <p><span data-global="googlehackathon">구글 학생 개발자 해커톤</span> 2012</p>
-                    </li>
-                </ul>
-            </article>
-            <footer></footer>
+      </li>
+      <li class="has-margin-bottom-10">
+        <label class="is-size-7" data-global="blog">Github</label>. <a class="is-size-6 is-size-7-mobile"
+                                                                       href="https://github.com/hsol/"
+                                                                       target="_blank">@hsol</a>
+      </li>
+      <li class="has-margin-bottom-10">
+        <label class="is-size-7" data-global="blog">링크드인</label>. <a class="is-size-6 is-size-7-mobile"
+                                                                     href="https://www.linkedin.com/in/devhansollim/"
+                                                                     target="_blank">@devhansollim</a>
+      </li>
+      <li>
+        <label class="is-size-7" data-global="blog">블로그</label>. <a class="is-size-6 is-size-7-mobile"
+                                                                    href="https://hsol.tistory.com"
+                                                                    target="_blank">https://hsol.tistory.com</a>
+      </li>
+    </ul>
+  </article>
+</section>
+<section class="section has-bg-full-2">
+  <header class="title has-text-centered has-text-white">경험</header>
+  <hr class="header-assistant"/>
+  <article class="container">
+    <ul class="has-text-centered has-text-white">
+      <li>
+        <h2 class="is-size-4 has-margin-bottom-5">2017</h2>
+        <p data-global="nexters10th">넥스터즈 10기 활동</p>
+        <h2 class="is-size-4 has-margin-top-10 has-margin-bottom-5">2016</h2>
+        <p data-global="xecon2016"><a target="_blank" href="http://hsol.tistory.com/937">XEcon 2016</a>
+        </p>
+        <p data-global="joinridi"><a target="_blank" href='http://www.ridicorp.com/'>리디(주)</a> 입사</p>
+        <p data-global="leftcnttech"><a target="_blank" href='http://cntt.co.kr/'>씨엔티테크(주)</a> 퇴사</p>
+        <p data-global="gdgdevfest2016"><a target="_blank" href="http://hsol.tistory.com/936">GDG
+          Devfest Seoul 2016</a></p>
+        <p data-global="naverdeview2016"><a target="_blank" href="http://hsol.tistory.com/934">네이버 D2
+          DEVIEW 2016</a></p>
+        <p data-global="military">8월 25일 ~ 9월 22일 훈련소</p>
+        <p data-global="nexters_op">넥스터즈 10기 운영진(CTO)</p>
+        <p data-global="unithon_3">제 3회 유니톤 참가(수상)</p>
+        <p data-global="nexters9th">넥스터즈 9기 활동</p>
+        <h2 class="is-size-4 has-margin-top-10 has-margin-bottom-5">2015</h2>
+        <p data-global="erdmodeling">ERD를 이용한 DB 모델링 세미나</p>
+        <p data-global="facebookmeetup">페이스북 개발자 그룹의 첫 번째 미트업</p>
+        <p data-global="teheranmeet">테헤란로 커피클럽(아침에 하는 스타트업 네트워킹 모임)_36th</p>
+        <h2 class="is-size-4 has-margin-top-10 has-margin-bottom-5">2014</h2>
+        <p data-global="joincnttech"><a target="_blank" href='http://cntt.co.kr/'>씨엔티테크(주)</a> 입사</p>
+        <p data-global="datahackathon">2014 빅데이톤 경진대회(수상)</p>
+        <p>Google HackFair</p>
+        <h2 class="is-size-4 has-margin-top-10 has-margin-bottom-5">2013</h2>
+        <p><span data-global="googlehackathon">구글 학생 개발자 해커톤</span> 2013</p>
+        <h2 class="is-size-4 has-margin-top-10 has-margin-bottom-5">2012</h2>
+        <p><span data-global="googlehackathon">구글 학생 개발자 해커톤</span> 2012</p>
+      </li>
+    </ul>
+  </article>
+</section>
+<section class="section has-background-white">
+  <header class="title has-text-centered">보유기술</header>
+  <hr class="header-assistant"/>
+  <article class="container">
+    <div class="columns">
+      <div class="column is-child">
+        <h3 class="title is-size-4 has-text-right" data-global="web">언어</h3>
+        <ul>
+          <li class="has-margin-bottom-10 has-text-right">
+            <h4 class="is-size-5" data-global="web">웹</h4>
+            <div class="has-margin-right-15">
+              <p class="is-size-6" data-global="frontend">프론트엔드</p>
+              <p class="has-margin-right-10">Javascript(jQuery, React.js, VueJS ...), HTML, CSS ...</p>
+              <p class="is-size-6" data-global="backend">백엔드</p>
+              <p class="has-margin-right-10">php, Java, C#, Python, Node.js, C++ ...</p>
+            </div>
+          </li>
+          <li class="has-margin-bottom-10 has-text-right">
+            <h4 class="is-size-5" data-global="mobile">모바일</h4>
+            <div class="has-margin-right-15">
+              <p>Android. Java / iOS. Objective-C ...</p>
+            </div>
+          </li>
+          <li class="has-text-right">
+            <h4 class="is-size-5" data-global="database">Database</h4>
+            <div class="has-margin-right-15">
+              <p>MS-Sql, MySQL, ORACLE ...</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="is-divider" data-content="AND"></div>
+      <div class="column">
+        <h3 class="title is-size-4" data-global="web">도구</h3>
+        <ul>
+          <li class="has-margin-bottom-10">
+            <h4 class="is-size-5" data-global="database">협업</h4>
+            <div class="has-margin-left-15">
+              <p>VCS(Git, SVN), Github, Asana, JIRA, Confluence, Slack ...</p>
+            </div>
+          </li>
+          <li class="has-margin-bottom-10">
+            <h4 class="is-size-5" data-global="database">개발</h4>
+            <div class="has-margin-left-15">
+              <p>IntelliJ IDEA(WebStorm, PhpStorm, DataGrip ... ), Eclipse, Visual Studio ...</p>
+            </div>
+          </li>
+          <li class="has-margin-bottom-10">
+            <h4 class="is-size-5" data-global="database">문서</h4>
+            <div class="has-margin-left-15">
+              <p>MS-Word, MS-PowerPoint, MS-Excel ...</p>
+            </div>
+          </li>
+          <li class="has-margin-bottom-10">
+            <h4 class="is-size-5" data-global="database">이미지</h4>
+            <div class="has-margin-left-15">
+              <p>Adobe Photoshop, Adobe illustrator ...</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </article>
+</section>
+<section class="section has-bg-full-3 has-text-white">
+  <header class="title has-text-centered has-text-white">교육</header>
+  <hr class="header-assistant"/>
+  <article class="container has-text-centered has-text-white">
+    <ul>
+      <li class="has-margin-bottom-10"><span class="tag is-rounded">2018 ~</span> 건국대학교 신산업융합학과 재학.</li>
+      <li class="has-margin-bottom-10"><span class="tag is-rounded">~ 2015</span> 선린 인터넷고등학교 정보통신과 졸업.</li>
+      <li class="has-margin-bottom-10"><span class="tag is-rounded">~ 2012</span> 연희중학교 졸업.</li>
+      <li class="has-margin-bottom-10"><span class="tag is-rounded">~ 2009</span> 북가좌초등학교 졸업.</li>
+    </ul>
+  </article>
+</section>
+<section class="section has-background-white">
+  <header class="title has-text-centered">포트폴리오</header>
+  <hr class="header-assistant"/>
+  <article class="container carousel carousel-animated carousel-animate-slide carousel-cards" data-autoplay="true">
+    <div class="carousel-navigation">
+      <div class="carousel-nav-left">
+        <button type="button" class="button is-dark is-outlined is-small">이전 프로젝트</button>
+      </div>
+      <div class="carousel-nav-right">
+        <button type="button" class="button is-dark is-outlined is-small">다음 프로젝트</button>
+      </div>
+    </div>
+    <div class="carousel-container columns">
+      <div class="column carousel-item">
+        <div class="card">
+          <header class="card-header has-background-white toggle">
+            <div class="media card-header-title">
+              <div class="media-left">
+                <figure class="image is-64x64">
+                  <img src="./images/portfolios/mingginyu.jpg">
+                </figure>
+              </div>
+              <div class="media-content ">
+                <p class="is-size-6 has-text-weight-bold">내 친구 밍기뉴 (Mingginyua)</p>
+                <p class="subtitle is-size-7">IoT 스마트 화분</p>
+              </div>
+            </div>
+          </header>
+          <article class="card-content">
+            <div class="content">
+              <p><label data-global="period">개발기간</label>. 2<span data-global="day">일</span></p>
+              <p><label data-global="role">역할</label>. <span data-global="frontend">프론트엔드</span>, <span
+                  data-global="backend">백엔드</span></p>
+              <p><label data-global="link">바로가기</label>. <a href="https://github.com/Nexters/mingginyu"
+                                                            target="_blank">https://github.com/Nexters/mingginyu</a>
+              </p>
+            </div>
+          </article>
         </div>
-    </section>
-    <section id="education" class="section-content article_03">
-        <div class="jail">
-            <header data-global="education">교육</header>
-            <hr>
-            <article>
-                <p>2015. <span data-global="sunrin">선린 인터넷고등학교 졸업.</span></p>
-                <p>2012. <span data-global="yonhi">연희중학교 졸업.</span></p>
-                <p>2009. <span data-global="bukgajwa">북가좌초등학교 졸업.</span></p>
-            </article>
-            <footer></footer>
+      </div>
+      <div class="column carousel-item">
+        <div class="card">
+          <header class="card-header has-background-white toggle">
+            <div class="media card-header-title">
+              <div class="media-left">
+                <figure class="image is-64x64">
+                  <img src="./images/portfolios/pizzaalvolo.jpg">
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="is-size-6 has-text-weight-bold">피자알볼로</p>
+                <p class="subtitle is-size-7">홈페이지 및 주문시스템</p>
+              </div>
+            </div>
+          </header>
+          <article class="card-content">
+            <div class="content">
+              <p><label data-global="period">개발기간</label>. 3<span data-global="month">개월</span></p>
+              <p><label data-global="role">역할</label>. <span data-global="frontend">프론트엔드</span>, <span
+                  data-global="backend">백엔드</span></p>
+              <p><label data-global="link">바로가기</label>. <a href="https://pizzaalvolo.co.kr"
+                                                            target="_blank">https://pizzaalvolo.co.kr</a>
+              </p>
+            </div>
+          </article>
         </div>
-    </section>
-    <section id="skills" class="section-content article_04 bg_fix">
-        <div class="jail">
-            <header data-global="skills">보유기술</header>
-            <hr>
-            <article>
-                <ul>
-                    <li>
-                        <h1 data-global="web">웹</h1>
-                        <h2 data-global="frontend">프론트엔드</h2>
-                        <p>HTML, CSS, Javascript</p>
-                        <h2 data-global="backend">백엔드</h2>
-                        <p>Java-jsp, VB-asp, C#-asp.net, php, Python-Django</p>
-                    </li>
-                    <li>
-                        <h1 data-global="database">DB</h1>
-                        <p>MS-Sql, MySQL, ORACLE</p>
-                    </li>
-                    <li>
-                        <h1 data-global="mobile">모바일</h1>
-                        <p>Android. Java / iOS. Objective-C</p>
-                    </li>
-                </ul><!--
-                -->
-                <ul>
-                    <li>
-                        <h1 data-global="tools">프로그램</h1>
-                        <h2 data-global="develop">개발</h2>
-                        <p>IntelliJ IDEA(IntelliJ, WebStorm, phpStorm, Android Studio), Eclipse, Visual Studio</p>
-                        <h2 data-global="documents">문서작성</h2>
-                        <p>MS-Word, MS-PowerPoint, MS-Excel</p>
-                        <h2 data-global="design">디자인</h2>
-                        <p>Adobe Photoshop, Adobe illustrator</p>
-                    </li>
-                </ul>
-            </article>
-            <footer></footer>
+      </div>
+      <div class="column carousel-item">
+        <div class="card">
+          <header class="card-header has-background-white toggle">
+            <div class="media card-header-title">
+              <div class="media-left">
+                <figure class="image is-64x64">
+                  <img src="./images/portfolios/pizzamaru.jpg">
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="is-size-6 has-text-weight-bold">피자마루</p>
+                <p class="subtitle is-size-7">홈페이지</p>
+              </div>
+            </div>
+          </header>
+          <article class="card-content">
+            <div class="content">
+              <p><label data-global="period">개발기간</label>. 2<span data-global="month">개월</span></p>
+              <p><label data-global="role">역할</label><span data-global="frontend">프론트엔드</span>, <span
+                  data-global="backend">백엔드</span></p>
+              <p><label data-global="link">바로가기</label>. <a href="http://pizzamaru.co.kr" target="_blank">http://pizzamaru.co.kr/</a>
+              </p>
+            </div>
+          </article>
         </div>
-    </section>
-    <section id="portfolio" class="section-content article_05 jail">
-        <header data-global="portfolio">포트폴리오</header>
-        <hr>
-        <article>
-            <ul>
-                <div class="slide slide_left"></div>
-                <div class="slide slide_right"></div>
-                <li>
-                    <div class="bg_cover">
-                        <div class="vertical-align">
-                            <p><label data-global="period">개발기간</label>. 2<span data-global="day">일</span></p>
-                            <p><label data-global="role">역할</label>. <span data-global="frontend">프론트엔드</span>, <span
-                                    data-global="backend">백엔드</span></p>
-                            <p><label data-global="link">바로가기</label>. <a href="https://github.com/Nexters/mingginyu"
-                                                                          target="_blank">https://github.com/Nexters/mingginyu</a>
-                            </p>
-                        </div>
-                    </div>
-                    <img src="./images/pf_mingginyu.jpg">
-                </li>
-                <li>
-                    <div class="bg_cover">
-                        <div class="vertical-align">
-                            <p><label data-global="period">개발기간</label>. 3<span data-global="month">개월</span></p>
-                            <p><label data-global="role">역할</label>. <span data-global="frontend">프론트엔드</span>, <span
-                                    data-global="backend">백엔드</span></p>
-                            <p><label data-global="link">바로가기</label>. <a href="https://pizzaalvolo.co.kr"
-                                                                          target="_blank">https://pizzaalvolo.co.kr</a>
-                            </p>
-                        </div>
-                    </div>
-                    <img src="./images/pf_pizzaalvolo.jpg">
-                </li>
-                <li>
-                    <div class="bg_cover">
-                        <div class="vertical-align">
-                            <p><label data-global="period">개발기간</label>. 2<span data-global="month">개월</span></p>
-                            <p><label data-global="role">역할</label><span data-global="frontend">프론트엔드</span>, <span
-                                    data-global="backend">백엔드</span></p>
-                            <p><label data-global="link">바로가기</label>. <a href="http://pizzamaru.co.kr" target="_blank">http://pizzamaru.co.kr/</a>
-                            </p>
-                        </div>
-                    </div>
-                    <img src="./images/pf_pizzamaru.jpg">
-                </li>
-                <li>
-                    <div class="bg_cover">
-                        <div class="vertical-align">
-                            <p><label data-global="period">개발기간</label>. 1<span data-global="month">개월</span></p>
-                            <p><label data-global="role">역할</label>. <span data-global="backend">백엔드</span></p>
-                            <p><label data-global="link">바로가기</label>. <a href="http://bubblepong.com/" target="_blank">http://bubblepong.com/</a>
-                            </p>
-                        </div>
-                    </div>
-                    <img src="./images/pf_bubblepong.jpg">
-                </li>
-                <li>
-                    <div class="bg_cover">
-                        <div class="vertical-align">
-                            <p><label data-global="period">개발기간</label>. 1<span data-global="month">개월</span></p>
-                            <p><label data-global="role">역할</label>. <span data-global="frontend">프론트엔드</span>, <span
-                                    data-global="backend">백엔드</span></p>
-                            <p><label data-global="link">바로가기</label>. <a href="http://coffeezarii.com/"
-                                                                          target="_blank">http://coffeezarii.com/</a>
-                            </p>
-                        </div>
-                    </div>
-                    <img src="./images/pf_coffeezarii.jpg">
-                </li>
-                <li>
-                    <div class="bg_cover">
-                        <div class="vertical-align">
-                            <p><label data-global="period">개발기간</label>. 3<span data-global="month">개월</span></p>
-                            <p><label data-global="role">역할</label>. <span data-global="frontend">프론트엔드</span>, <span
-                                    data-global="backend">프론트엔드</span></p>
-                            <p><label data-global="link">바로가기</label>. <a href="http://delivery.moskorea.kr/"
-                                                                          target="_blank">http://delivery.moskorea.kr/</a>
-                            </p>
-                        </div>
-                    </div>
-                    <img src="./images/pf_mosburger.jpg">
-                </li>
-                <li>
-                    <div class="bg_cover">
-                        <div class="vertical-align">
-                            <p><label data-global="period">개발기간</label>. 2<span data-global="month">개월</span></p>
-                            <p><label data-global="role">역할</label>. <span data-global="backend">백엔드</span></p>
-                            <p><label data-global="link">바로가기</label>. <a href="http://cntt.co.kr/" target="_blank">http://cntt.co.kr/</a>
-                            </p>
-                        </div>
-                    </div>
-                    <img src="./images/pf_cnttech.png">
-                </li>
-                <li>
-                    <div class="bg_cover">
-                        <div class="vertical-align">
-                            <p><label data-global="period">개발기간</label>. 6<span data-global="month">개월</span></p>
-                            <p><label data-global="role">역할</label>. <span data-global="android">안드로이드</span>, <span data-global="ios">아이폰</span></p>
-                            <p><label data-global="link">바로가기</label>. <a href="http://theconte.st/androidapp-f" target="_blank" data-global="android">안드로이드</a>, <a href="http://theconte.st/iosapp-thecontest-f" target="_blank" data-global="ios">아이폰</a></p>
-                        </div>
-                    </div>
-                    <img src="./images/pf_thecontest.jpg">
-                </li>
-                <li>
-                    <div class="bg_cover">
-                        <div class="vertical-align">
-                            <p><label data-global="period">개발기간</label>. 3<span data-global="day">일</span></p>
-                            <p><label data-global="role">역할</label>. <span data-global="frontend">프론트엔드</span></p>
-                            <p><label data-global="link">바로가기</label>. <a href="http://hsol.github.io/" target="_blank">http://hsol.github.io/</a>
-                            </p>
-                        </div>
-                    </div>
-                    <img src="./images/pf_portfolio.jpg">
-                </li>
-            </ul>
-        </article>
-        <footer></footer>
-    </section>
-    <section id="contact" class="section-content article_06 bg_fix">
-        <div class="jail">
-            <header data-global="contact">연락하기</header>
-            <article>
-                <div class="info">
-                    <div class="input-cover"><input name="userName" type="text" placeholder="John Doe"></div>
-                    <div class="input-cover"><input name="userEmail" type="email" placeholder="johndoe@example.com">
-                    </div>
-                </div>
-                <div class="desc">
-                    <textarea name="desc" placeholder="Hello HansolLim!"></textarea>
-                    <button id="contact_submit" class="contact_submit" data-global="contact_submit">보내기</button>
-                </div>
-            </article>
-            <footer>
-                <a href="https://facebook.com/molmoty" target="_blank"><img src="./images/logo-facebook.png"></a>
-                <a href="https://github.com/hsol" target="_blank"><img src="./images/logo-github.png"></a>
-                <a href="https://www.linkedin.com/in/hansol-lim-06b740102" target="_blank"><img
-                        src="./images/logo-linkedin.png"></a>
-            </footer>
+      </div>
+      <div class="column carousel-item">
+        <div class="card">
+          <header class="card-header has-background-white toggle">
+            <div class="media card-header-title">
+              <div class="media-left">
+                <figure class="image is-64x64">
+                  <img src="./images/portfolios/coffeezarii.jpg">
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="is-size-6 has-text-weight-bold">커피자리</p>
+                <p class="subtitle is-size-7">홈페이지</p>
+              </div>
+            </div>
+          </header>
+          <article class="card-content">
+            <div class="content">
+              <p><label data-global="period">개발기간</label>. 1<span data-global="month">개월</span></p>
+              <p><label data-global="role">역할</label>. <span data-global="frontend">프론트엔드</span>, <span
+                  data-global="backend">백엔드</span></p>
+              <p><label data-global="link">바로가기</label>. <a href="http://coffeezarii.com/"
+                                                            target="_blank">http://coffeezarii.com/</a>
+              </p>
+            </div>
+          </article>
         </div>
-    </section>
-</article>
-<footer id="footer">Copyright 2016. HansolLim all rights reserved.</footer>
+      </div>
+      <div class="column carousel-item">
+        <div class="card">
+          <header class="card-header has-background-white toggle">
+            <div class="media card-header-title">
+              <div class="media-left">
+                <figure class="image is-64x64">
+                  <img src="./images/portfolios/mosburger.jpg">
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="is-size-6 has-text-weight-bold">모스버거</p>
+                <p class="subtitle is-size-7">주문 시스템</p>
+              </div>
+            </div>
+          </header>
+          <article class="card-content">
+            <div class="content">
+              <p><label data-global="period">개발기간</label>. 3<span data-global="month">개월</span></p>
+              <p><label data-global="role">역할</label>. <span data-global="frontend">프론트엔드</span>, <span
+                  data-global="backend">프론트엔드</span></p>
+              <p><label data-global="link">바로가기</label>. <a href="http://delivery.moskorea.kr/"
+                                                            target="_blank">http://delivery.moskorea.kr/</a>
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="column carousel-item">
+        <div class="card">
+          <header class="card-header has-background-white toggle">
+            <div class="media card-header-title">
+              <div class="media-left">
+                <figure class="image is-64x64">
+                  <img src="./images/portfolios/thecontest.jpg">
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="is-size-6 has-text-weight-bold">더 콘테스트</p>
+                <p class="subtitle is-size-7">Android, iOS 어플리케이션</p>
+              </div>
+            </div>
+          </header>
+          <article class="card-content">
+            <div class="content">
+              <p><label data-global="period">개발기간</label>. 6<span data-global="month">개월</span></p>
+              <p><label data-global="role">역할</label>. <span data-global="android">안드로이드</span>, <span
+                  data-global="ios">아이폰</span></p>
+              <p><label data-global="link">바로가기</label>. <a href="http://theconte.st/androidapp-f"
+                                                            target="_blank"
+                                                            data-global="android">안드로이드</a>, <a
+                  href="http://theconte.st/iosapp-thecontest-f" target="_blank"
+                  data-global="ios">아이폰</a></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+<footer class="hero is-medium card has-bg-full-4">
+  <div class="card-content">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title has-text-white is-size-2-desktop is-size-4-tablet is-size-5-mobile">"사람을 얻는 자는 번창하고, 사람을 잃는 자는
+          망한다."</h1>
+        <h2 class="subtitle has-text-grey-light is-size-4-desktop is-size-5-tablet is-size-7-mobile">여기까지 보셨다면, 이제 저에게
+          연락해보세요!</h2>
+      </div>
+    </div>
+  </div>
+  <footer class="card-footer has-background-white">
+    <a class="card-footer-item" href="https://www.linkedin.com/in/devhansollim/" target="_blank">Linkedin<span
+        class="is-hidden-mobile"> 에서 만나기</span></a>
+    <a class="card-footer-item" href="https://github.com/hsol/hsol.github.io/issues/new" target="_blank">Github<span
+        class="is-hidden-mobile">&nbsp;Issue로 연락하기</span></a>
+    <a class="card-footer-item" href="https://facebook.com/molmoty" target="_blank">Facebook <span
+        class="is-hidden-mobile">에서 만나기</span></a>
+  </footer>
+</footer>
 </body>
 </html>

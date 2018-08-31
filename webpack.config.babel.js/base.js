@@ -9,7 +9,7 @@ import devConfig from './Environments/dev'
 export default (env) => {
    return merge(
       {
-         entry: { base: pathConst.src },
+         entry: { base: `${pathConst.src}/App` },
          output: {
             path: pathConst.dist,
             filename: '[name].min.js'
@@ -30,7 +30,8 @@ export default (env) => {
          resolve: {
             extensions: ['.js', '.jsx'],
             modules: [
-               'node_modules'
+               'node_modules',
+               './src/app'
             ],
             symlinks: false
          }

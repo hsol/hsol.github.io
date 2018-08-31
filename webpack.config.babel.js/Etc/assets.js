@@ -9,7 +9,14 @@ export default () => {
       entry: {
          'style.base': [
             `${pathConst.module}/normalize.css`,
-            `${pathConst.module}/bulma`
+            `${pathConst.assets}/styles/base`,
+            `${pathConst.assets}/styles/bulma`,
+         ]
+      },
+      resolve: {
+         extensions: ['.css', '.scss', '.sass'],
+         modules: [
+            './assets'
          ]
       },
       module: {
