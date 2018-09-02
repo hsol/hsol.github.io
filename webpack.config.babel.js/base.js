@@ -31,7 +31,7 @@ export default (env) => {
             extensions: ['.js', '.jsx'],
             modules: [
                'node_modules',
-               './src/app'
+               './src/App'
             ],
             symlinks: false
          }
