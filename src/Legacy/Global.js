@@ -35,7 +35,7 @@ import 'babel-polyfill'
          },
          personal: {
             KOR: "프로필",
-            ENG: "Profile"
+            ENG: "ProfileSection"
          },
          name: {
             KOR: "이름",
@@ -131,7 +131,7 @@ import 'babel-polyfill'
          },
          experience: {
             KOR: "경험 및 수상",
-            ENG: "Experience"
+            ENG: "ExperienceSection"
          },
          googlehackathon: {
             KOR: "구글 학생 개발자 해커톤",

@@ -33,18 +33,20 @@
   },
   "homepage": "https://github.com/hsol/hsol.github.io#readme",
   "dependencies": {
+    "bulma": "^0.7.1",
     "bulma-extensions": "^2.2.2",
-    "github-card": "^1.2.1",
-    "react": "^16.4.2"
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
+    "babel-plugin-syntax-decorators": "^6.13.0",
+    "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
-    "bulma": "^0.7.1",
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
     "chromedriver": "^2.41.0",

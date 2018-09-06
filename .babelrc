@@ -1,3 +1,8 @@
 {
-  "presets": ["env", "react"]
+  "presets": ["env", "react"],
+  "plugins": [
+    "babel-plugin-syntax-decorators",
+    "babel-plugin-syntax-jsx"
+  ]
+
 }

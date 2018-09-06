@@ -18,17 +18,13 @@ $backgrounds: (
 }
 
 @each $level in $bulma-levels {
-  .has-margin-top-#{$level * 5} {
-    margin-top: #{$level * 5}px;
-  }
-  .has-margin-bottom-#{$level * 5} {
-    margin-bottom: #{$level * 5}px;
-  }
-  .has-margin-left-#{$level * 5} {
-    margin-left: #{$level * 5}px;
-  }
-  .has-margin-right-#{$level * 5} {
-    margin-right: #{$level * 5}px;
+  @each $direction in $directions {
+    .has-margin-#{$direction}-#{$level * 5} {
+      margin-#{$direction}: #{$level * 5}px;
+    }
+    .has-padding-#{$direction}-#{$level * 5} {
+      padding-#{$direction}: #{$level * 5}px;
+    }
   }
 
   .z-index-#{$level} {
