@@ -1,4 +1,3 @@
-import BulmaLoader from 'Library/BulmaLoader'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
@@ -12,7 +11,6 @@ import PortfolioSection from 'Components/Sections/PortfolioSection'
 import ContactSection from 'Components/Sections/ContactSection'
 import Footer from 'Layout/Footer'
 
-BulmaLoader.attach();
 ReactDOM.render(
    <div>
       <Navbar/>

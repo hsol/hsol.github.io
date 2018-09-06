@@ -1,9 +1,15 @@
 import React from 'react'
 import Section from 'Components/Base/Section'
 
+import { bulmaCarousel } from 'bulma-extensions'
+
 export default class extends React.Component {
    constructor(props) {
       super(props);
+   }
+
+   componentDidMount () {
+      bulmaCarousel.attach();
    }
 
    render() {
