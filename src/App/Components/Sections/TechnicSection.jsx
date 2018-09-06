@@ -56,7 +56,7 @@ export default class TechnicSection extends React.Component {
                               </div>
                            )
                         })
-                        .reduce((r, a) => r.concat(a, (<div key="none" className="is-divider" data-content="AND"/>)), [])
+                        .reduce((r, a) => r.concat(a, <div key="none" className="is-divider" data-content="AND"/>), [])
                         .filter((data, index, arr) => arr.length - 1 !== index)
                   }
                </div>
