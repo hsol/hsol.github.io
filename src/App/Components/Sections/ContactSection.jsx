@@ -2,7 +2,7 @@ import React from 'react'
 import Section from 'Components/Base/Section'
 import Utterance from 'Library/Utterance'
 
-export default class extends React.Component {
+export default class ContactSection extends React.Component {
    constructor(props) {
       super(props);
    }

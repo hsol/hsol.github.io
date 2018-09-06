@@ -1,7 +1,7 @@
 import React from 'react'
 import Section from 'Components/Base/Section'
 
-export default class extends React.Component {
+export default class TechnologySection extends React.Component {
    constructor(props) {
       super(props);
    }

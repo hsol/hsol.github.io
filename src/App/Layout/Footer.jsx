@@ -1,6 +1,6 @@
 import React from 'react'
 
-class Footer extends React.Component {
+export default class Footer extends React.Component {
    openKakaoPopup(event) {
       event.preventDefault();
 
@@ -24,5 +24,3 @@ class Footer extends React.Component {
       )
    }
 }
-
-export default Footer

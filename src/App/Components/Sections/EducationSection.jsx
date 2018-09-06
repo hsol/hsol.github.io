@@ -1,9 +1,18 @@
 import React from 'react'
 import Section from 'Components/Base/Section'
 
-export default class extends React.Component {
+import educations from 'Datas/educations.json'
+
+export default class EducationSection extends React.Component {
    constructor(props) {
       super(props);
+   }
+
+   renderRecord(year, description) {
+      return (<li className="has-margin-bottom-10">
+         <span className="tag is-rounded has-margin-right-5">{year}</span>
+         <span>{description}</span>
+      </li>)
    }
 
    render() {
@@ -13,13 +22,11 @@ export default class extends React.Component {
             <hr className="header-assistant"/>
             <article className="container has-text-centered has-text-white">
                <ul>
-                  <li className="has-margin-bottom-10"><span className="tag is-rounded">2018 ~</span> 건국대학교 신산업융합학과 재학.
-                  </li>
-                  <li className="has-margin-bottom-10"><span className="tag is-rounded">~ 2015</span> 선린 인터넷고등학교 정보통신과
-                     졸업.
-                  </li>
-                  <li className="has-margin-bottom-10"><span className="tag is-rounded">~ 2012</span> 연희중학교 졸업.</li>
-                  <li className="has-margin-bottom-10"><span className="tag is-rounded">~ 2009</span> 북가좌초등학교 졸업.</li>
+                  {Object.keys(educations).sort((a, b) => {
+                     return b - a
+                  }).map(year => {
+                     return this.renderRecord(year, educations[year]);
+                  })}
                </ul>
             </article>
          </Section>

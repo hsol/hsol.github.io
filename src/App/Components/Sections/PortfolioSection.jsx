@@ -3,7 +3,7 @@ import Section from 'Components/Base/Section'
 
 import { bulmaCarousel } from 'bulma-extensions'
 
-export default class extends React.Component {
+export default class PortfolioSection extends React.Component {
    constructor(props) {
       super(props);
    }
