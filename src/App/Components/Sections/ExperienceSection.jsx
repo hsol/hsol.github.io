@@ -1,7 +1,7 @@
 import React from 'react'
 import Section from 'Components/Base/Section'
 
-class ExperienceSection extends React.Component {
+export default class extends React.Component {
    constructor(props) {
       super(props);
    }
@@ -48,5 +48,3 @@ class ExperienceSection extends React.Component {
       )
    }
 }
-
-export default ExperienceSection

@@ -1,6 +1,6 @@
 import React from 'react'
 
-class IntroBanner extends React.Component {
+export default class extends React.Component {
    constructor(props) {
       super(props);
 
@@ -55,5 +55,3 @@ class IntroBanner extends React.Component {
       )
    }
 }
-
-export default IntroBanner

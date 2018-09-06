@@ -1,7 +1,7 @@
 import React from 'react'
 import Section from 'Components/Base/Section'
 
-class PortfolioSection extends React.Component {
+export default class extends React.Component {
    constructor(props) {
       super(props);
    }
@@ -192,5 +192,3 @@ class PortfolioSection extends React.Component {
       )
    }
 }
-
-export default PortfolioSection

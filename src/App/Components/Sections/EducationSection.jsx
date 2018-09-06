@@ -1,7 +1,7 @@
 import React from 'react'
 import Section from 'Components/Base/Section'
 
-class EducationSection extends React.Component {
+export default class extends React.Component {
    constructor(props) {
       super(props);
    }
@@ -26,5 +26,3 @@ class EducationSection extends React.Component {
       )
    }
 }
-
-export default EducationSection
