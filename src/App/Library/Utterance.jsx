@@ -1,19 +1,17 @@
 import React from 'react'
 
-export default class extends React.Component {
+export default class Utterance extends React.Component {
    constructor (props) {
       super(props);
 
       this.component = React.createRef();
    }
 
-   componentWillMount() {
-      document.head.insertAdjacentHTML('beforeend', '<link rel="prefetch" href="https://utteranc.es/client.js" />');
-      document.head.insertAdjacentHTML('beforeend', '<link rel="preload" href="https://utteranc.es/client.js" as="script" />');
-   }
-
    componentDidMount() {
       const script = document.createElement('script');
+
+      document.head.insertAdjacentHTML('beforeend', '<link rel="prefetch" href="https://utteranc.es/client.js" />');
+      document.head.insertAdjacentHTML('beforeend', '<link rel="preload" href="https://utteranc.es/client.js" as="script" />');
 
       script.src = 'https://utteranc.es/client.js';
       script.async = true;

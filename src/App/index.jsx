@@ -5,7 +5,7 @@ import Navbar from 'Layout/Navbar'
 import IntroBanner from 'Components/IntroBanner'
 import ProfileSection from 'Components/Sections/ProfileSection'
 import ExperienceSection from 'Components/Sections/ExperienceSection'
-import TechnologySection from 'Components/Sections/TechnologySection'
+import TechnicSection from 'Components/Sections/TechnicSection'
 import EducationSection from 'Components/Sections/EducationSection'
 import PortfolioSection from 'Components/Sections/PortfolioSection'
 import ContactSection from 'Components/Sections/ContactSection'
@@ -17,7 +17,7 @@ ReactDOM.render(
       <IntroBanner/>
       <ProfileSection className="has-background-white"/>
       <ExperienceSection className="has-bg-full-2 has-text-white"/>
-      <TechnologySection className="has-background-white"/>
+      <TechnicSection className="has-background-white"/>
       <EducationSection className="has-bg-full-3 has-text-white"/>
       <PortfolioSection className="has-background-white"/>
       <ContactSection className="has-bg-full-4 has-text-white"/>
