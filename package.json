@@ -35,6 +35,7 @@
   "dependencies": {
     "bulma": "^0.7.1",
     "bulma-extensions": "^2.2.2",
+    "moment": "^2.22.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
   },
