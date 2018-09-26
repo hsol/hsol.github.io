@@ -31,12 +31,24 @@
   color: inherit;
 }
 
+.accordions .accordion .accordion-header + .accordion-body:not(.is-active) {
+  padding: 0;
+}
+
 @include mobile {
-  * { font-size: 11px; }
+  * {
+    font-size: 11px;
+  }
 }
+
 @include tablet {
-  * { font-size: 13px; }
+  * {
+    font-size: 13px;
+  }
 }
+
 @include desktop {
-  * { font-size: 15px; }
+  * {
+    font-size: 15px;
+  }
 }

@@ -1,4 +1,33 @@
 import React from 'react'
+import Typed from 'typed.js';
+
+class TypedComponent extends React.Component {
+   componentDidMount() {
+      const { children } = this.props;
+      const options = Object.assign({
+         strings: children,
+         typeSpeed: 80,
+         backSpeed: 50,
+      }, this.props);
+
+      this.typed = new Typed(this.el, options);
+   }
+
+   componentWillUnmount() {
+      this.typed.destroy();
+   }
+
+   render() {
+      const TagName = this.props.tagName || 'span';
+      const className = this.props.className || '';
+
+      return (<TagName className={className}>
+         <span className="is-size-1" ref={(el) => {
+            this.el = el;
+         }}></span>
+      </TagName>);
+   }
+}
 
 export default class IntroBanner extends React.Component {
    constructor(props) {
@@ -24,7 +53,7 @@ export default class IntroBanner extends React.Component {
    }
 
    componentDidMount() {
-      window.addEventListener('scroll', this.handleScroll);
+      setTimeout(() => {window.scrollTo(0, 0)}, 500)
    }
 
    componentWillUnmount() {
@@ -36,13 +65,28 @@ export default class IntroBanner extends React.Component {
          <section
             className="hero is-success has-bg-full-1 is-darken-4 is-fullheight"
             style={this.state.heroStyle}
+            ref={(el) => {
+               this.banner = el;
+            }}
          >
             <div className="hero-body">
                <div className="container z-index-1">
-                  <h1 className="title has-text-shadow-2 is-size-1-desktop is-size-3-tablet is-size-5-mobile">
-                     안녕하세요,<br className="is-hidden-tablet"/>
-                     <span className="has-text-primary is-size-1">임한솔</span>
-                     입니다.</h1>
+                  <TypedComponent
+                     tagName="h1"
+                     className="title has-text-shadow-2 is-size-1-desktop is-size-3-tablet is-size-5-mobile"
+                     strings={["안녕하세요,<br class='is-hidden-tablet'/><span class='has-text-primary is-size-1'>임한솔</span>입니다."]}
+                     onComplete={() => {
+                        window.scroll({
+                           top: this.banner.offsetHeight,
+                           left: 0,
+                           behavior: 'smooth'
+                        });
+                        setTimeout(() => {
+                           window.scrollTo(0, this.banner.offsetHeight)
+                           window.addEventListener('scroll', this.handleScroll)
+                        }, 1000)
+                     }}>
+                  </TypedComponent>
                   <h2 className="subtitle is-size-3">
                      <span className="has-margin-right-10 is-hidden-mobile"/>
                      <span className="tag is-light has-margin-right-5">매 순간 스스로 업그레이드 하는 개발자</span>

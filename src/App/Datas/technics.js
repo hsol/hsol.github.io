@@ -4,7 +4,7 @@ export default {
    [languageConst.KR]: {
       '언어': {
          '웹': {
-            '프론트엔드': 'Javascript(jQuery, React.js, VueJS ...), HTML, CSS ...',
+            '프론트엔드': 'Javascript(jQuery, REACT.js, VueJS ...), HTML, CSS ...',
             '백엔드': 'php, Java, C#, Python, Node.js, C++ ...'
          },
          '모바일': 'Android. Java / iOS. Objective-C ...',
