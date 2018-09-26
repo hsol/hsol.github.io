@@ -4,8 +4,6 @@ import baseConfig from './base'
 import terminalConfig from './Etc/terminal'
 import styleConfig from './Etc/assets'
 
-import legacyConfig from './Entries/legacy'
-
 function initEnvironment(env = {}, args) {
    env = Object.assign(args);
 
@@ -22,7 +20,6 @@ export default (env, args) => {
    return merge(
       baseConfig(env),
       terminalConfig(env),
-      styleConfig(env),
-      legacyConfig
+      styleConfig(env)
    );
 };

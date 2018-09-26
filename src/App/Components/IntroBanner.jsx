@@ -6,7 +6,7 @@ class TypedComponent extends React.Component {
       const { children } = this.props;
       const options = Object.assign({
          strings: children,
-         typeSpeed: 80,
+         typeSpeed: 90,
          backSpeed: 50,
       }, this.props);
 
@@ -52,8 +52,28 @@ export default class IntroBanner extends React.Component {
       });
    }
 
+   autoScrollFromTop() {
+      setTimeout(() => {
+         if (window.scrollY === 0) {
+            window.scroll({
+               top: this.banner.offsetHeight,
+               left: 0,
+               behavior: 'smooth'
+            });
+            setTimeout(() => {
+               window.scrollTo(0, this.banner.offsetHeight);
+               window.addEventListener('scroll', this.handleScroll)
+            }, 1000)
+         } else {
+            window.addEventListener('scroll', this.handleScroll)
+         }
+      }, 2000)
+   }
+
    componentDidMount() {
-      setTimeout(() => {window.scrollTo(0, 0)}, 500)
+      setTimeout(() => {
+         window.scrollTo(0, 0)
+      }, 500)
    }
 
    componentWillUnmount() {
@@ -75,17 +95,7 @@ export default class IntroBanner extends React.Component {
                      tagName="h1"
                      className="title has-text-shadow-2 is-size-1-desktop is-size-3-tablet is-size-5-mobile"
                      strings={["안녕하세요,<br class='is-hidden-tablet'/><span class='has-text-primary is-size-1'>임한솔</span>입니다."]}
-                     onComplete={() => {
-                        window.scroll({
-                           top: this.banner.offsetHeight,
-                           left: 0,
-                           behavior: 'smooth'
-                        });
-                        setTimeout(() => {
-                           window.scrollTo(0, this.banner.offsetHeight)
-                           window.addEventListener('scroll', this.handleScroll)
-                        }, 1000)
-                     }}>
+                     onComplete={this.autoScrollFromTop.bind(this)}>
                   </TypedComponent>
                   <h2 className="subtitle is-size-3">
                      <span className="has-margin-right-10 is-hidden-mobile"/>
