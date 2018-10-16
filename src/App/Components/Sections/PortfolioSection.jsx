@@ -2,7 +2,7 @@ import React from 'react'
 import Section from 'Components/Base/Section'
 import Global from 'Library/Global'
 
-import { bulmaAccordion, bulmaCarousel } from 'bulma-extensions'
+import { bulmaCarousel } from 'bulma-extensions'
 
 export default class PortfolioSection extends React.Component {
    constructor(props) {
@@ -18,7 +18,6 @@ export default class PortfolioSection extends React.Component {
       this.fetchItems();
 
       bulmaCarousel.attach();
-      bulmaAccordion.attach();
 
       window.onresize = () => this.setState({ sizeSync: { width: document.querySelector('[data-size-target]').clientWidth } })
       window.onresize();
@@ -45,11 +44,11 @@ export default class PortfolioSection extends React.Component {
                      <button type="button" className="button is-dark is-outlined is-small">다음 프로젝트</button>
                   </div>
                </div>
-               <div className="carousel-container columns accordions">
+               <div className="carousel-container columns">
                   {this.state.items.map((item, index) => {
                      return <div key={index} className="column carousel-item" style={this.state.sizeSync}>
-                        <div className="card accordion is-active">
-                           <header className="card-header accordion-header has-background-white toggle">
+                        <div className="card is-active">
+                           <header className="card-header has-background-white toggle">
                               <div className="media card-header-title">
                                  <div className="media-left">
                                     {item.images.length > 0 &&
@@ -64,14 +63,22 @@ export default class PortfolioSection extends React.Component {
                                  </div>
                               </div>
                            </header>
-                           <article className="card-content accordion-body">
-                              <div className="content accordion-content">
+                           <article className="card-content">
+                              <div className="content">
                                  {item.images.length > 1 &&
                                  <figure className="image is-64x64">
                                     {item.images.map((image, index) => {
                                        return index !== 0 ? <img key={index} src={image}/> : null
                                     }).filter(image => image !== null)}
                                  </figure>}
+                                 <div style={{overflow: 'hidden', whiteSpace: 'nowrap'}}>
+                                    {item.languages.map((lang, index) => {
+                                       return <label key={index}
+                                                     className="tag is-light has-margin-right-5">{lang}</label>;
+                                    })}
+                                    {item.period ? <label
+                                       className="tag is-grey-light is-pulled-right is-hidden-touch">{item.period}</label> : ''}
+                                 </div>
                                  <pre>{item.about}</pre>
                               </div>
                            </article>

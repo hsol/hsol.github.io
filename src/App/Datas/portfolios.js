@@ -68,16 +68,22 @@ export class Portfolio {
    }
 
    setPeriod(startDate = null, endDate = null) {
-      if (startDate !== null) {
+      if (moment(startDate, 'YYYY-MM-DD', true).isValid()) {
          this.setStartDate(startDate)
+      } else {
+         this.startDate = startDate;
       }
 
-      if (endDate !== null) {
+      if (moment(endDate, 'YYYY-MM-DD', true).isValid()) {
          this.setEndDate(endDate)
+      } else {
+         this.endDate = endDate;
       }
 
-      if (this.startDate !== null && this.endDate !== null) {
-         this.period = this.startDate.from(this.endDate, true);
+      if (moment.isMoment(startDate) && moment.isMoment(endDate)) {
+         this.period = moment.duration(this.startDate.diff(this.endDate), 'day').locale('ko').humanize();
+      } else {
+         this.period = [this.startDate, this.endDate].filter(date => date !== null).join(' ~ ')
       }
 
       return this;
