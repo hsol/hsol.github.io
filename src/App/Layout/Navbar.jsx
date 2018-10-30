@@ -1,11 +1,11 @@
 import React from 'react'
+import Sticky from 'react-sticky-fill'
 
 export default class Navbar extends React.Component {
    render() {
       return (
-         <section className="wrapper">
-            <div className="navbar is-transparent"/>
-            <nav className="navbar is-transparent is-darken-5 is-fixed-top" role="navigation"
+         <Sticky className="wrapper">
+            <nav className="navbar is-transparent is-darken-5" role="navigation"
                  aria-label="main navigation">
                <div className="navbar-brand">
                   <a className="navbar-item level-left z-index-1" href="/">
@@ -17,7 +17,7 @@ export default class Navbar extends React.Component {
                   </a>
                </div>
             </nav>
-         </section>
+         </Sticky>
       )
    }
 }

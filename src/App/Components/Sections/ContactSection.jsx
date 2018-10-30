@@ -1,5 +1,5 @@
 import React from 'react'
-import Section from 'Components/Base/Section'
+import Section from '../../Components/Base/Section'
 import Utterance from 'Library/Utterance'
 
 export default class ContactSection extends React.Component {
@@ -9,7 +9,7 @@ export default class ContactSection extends React.Component {
 
    render() {
       return (
-         <Section className={this.props.className}>
+         <Section {...this.props}>
             <div className="hero is-medium has-padding-bottom-35">
                <div className="hero-body">
                   <div className="container has-text-centered">

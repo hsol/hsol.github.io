@@ -99,9 +99,9 @@ export default class IntroBanner extends React.Component {
                   </TypedComponent>
                   <h2 className="subtitle is-size-3">
                      <span className="has-margin-right-10 is-hidden-mobile"/>
-                     <span className="tag is-light has-margin-right-5">매 순간 스스로 업그레이드 하는 개발자</span>
-                     <span className="tag is-light has-margin-right-5">언어 가리지 않는 유연한 개발자</span>
-                     <span className="tag is-light has-margin-right-5">디자인 감각을 가진 부드러운 개발자</span>
+                     <span className="tag is-light has-margin-right-5" data-aos="fade-up" data-aos-duration="500">매 순간 스스로 업그레이드 하는 개발자</span>
+                     <span className="tag is-light has-margin-right-5" data-aos="fade-up" data-aos-duration="750">언어 가리지 않는 유연한 개발자</span>
+                     <span className="tag is-light has-margin-right-5" data-aos="fade-up" data-aos-duration="1000">디자인 감각을 가진 부드러운 개발자</span>
                   </h2>
                </div>
             </div>

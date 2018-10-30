@@ -1,6 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import AOS from 'aos'
+import 'aos/dist/aos.css';
+
 import Navbar from 'Layout/Navbar'
 import IntroBanner from 'Components/IntroBanner'
 import ProfileSection from 'Components/Sections/ProfileSection'
@@ -25,3 +28,5 @@ ReactDOM.render(
    </div>,
    document.getElementById('app')
 );
+
+AOS.init();

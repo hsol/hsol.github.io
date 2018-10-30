@@ -1,5 +1,5 @@
 import React from 'react'
-import Section from 'Components/Base/Section'
+import Section from '../../Components/Base/Section'
 import Global from 'Library/Global'
 
 import { bulmaCarousel } from 'bulma-extensions'
@@ -29,7 +29,7 @@ export default class PortfolioSection extends React.Component {
 
    render() {
       return (
-         <Section className={this.props.className}>
+         <Section {...this.props}>
             <header className="title has-text-centered">포트폴리오</header>
             <hr className="header-assistant"/>
             <p className="has-text-centered"><a className="tag is-info" href="/documents/임한솔_포트폴리오.pdf" target="_blank">파일로

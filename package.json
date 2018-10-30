@@ -33,11 +33,13 @@
   },
   "homepage": "https://github.com/hsol/hsol.github.io#readme",
   "dependencies": {
+    "aos": "^2.3.4",
     "bulma": "^0.7.1",
     "bulma-extensions": "^2.2.2",
     "moment": "^2.22.2",
     "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "react-dom": "^16.4.2",
+    "react-sticky-fill": "^0.8.4"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

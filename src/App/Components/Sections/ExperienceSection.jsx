@@ -1,5 +1,5 @@
 import React from 'react'
-import Section from 'Components/Base/Section'
+import Section from '../../Components/Base/Section'
 
 import Global from 'Library/Global'
 
@@ -36,7 +36,7 @@ export default class ExperienceSection extends React.Component {
 
    render() {
       return (
-         <Section className={this.props.className}>
+         <Section {...this.props}>
             <header className="title has-text-centered">경험</header>
             <hr className="header-assistant"/>
             <article className="container">
