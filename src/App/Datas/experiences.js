@@ -21,5 +21,9 @@ export default {
       { datetime: '2017-02-25', description: '넥스터즈 10기 활동' },
       { datetime: '2017-04-27', description: 'NDC 2017' },
       { datetime: '2017-10-27', description: 'DEVIEW 2017' },
+      { datetime: '2018-04-24', description: 'NDC 2018' },
+      { datetime: '2018-10-11', description: 'DEVIEW 2018' },
+      { datetime: '2018-11-12', description: '리디(주) 퇴사' },
+      { datetime: '2018-11-26', description: '(주)비바리퍼블리카 입사' },
    ]
 }
