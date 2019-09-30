@@ -199,7 +199,7 @@ build/
 eggs/
 parts/
 var/
-sdist/
+dist/
 develop-eggs/
 .installed.cfg
 
