@@ -10,6 +10,8 @@ const SKILL = {
       MONGODB: 'MongoDB'
    },
    LANG: {
+      PYTHON: 'Python',
+      DJANGO: 'Django',
       PHP: 'PHP',
       SPRING: 'Java Spring',
       JSP: 'JSP',
