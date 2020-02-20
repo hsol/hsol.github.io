@@ -110,6 +110,10 @@ export class Portfolio {
    }
 
    addImage(image) {
+      if (image.indexOf('/') === -1) {
+         image = `/images/portfolios/${image}`;
+      }
+
       this.images.push(image);
 
       return this;
@@ -126,7 +130,7 @@ export default {
    [languageConst.KR]: [
       Portfolio.create('키키와 포포의 특허검색')
          .setLink('http://kcloud.or.kr/?p=3064')
-         .addImage('http://ourcharacter.kocca.kr/images/ourcharacter/characters/CHAR_201808030602555810.png')
+         .addImage('kikipopo.jpg')
          .setLanguages([SKILL.LANG.HTMLCSS, SKILL.LANG.JAVASCRIPT])
          .setPeriod('2014')
          .setSubtitle('캐릭터를 활용한 특허검색 포탈사이트')
@@ -134,7 +138,7 @@ export default {
 
       Portfolio.create('내 친구 밍기뉴 (Mingginyua)')
          .setLink('https://github.com/Nexters/mingginyu')
-         .addImage('/images/portfolios/mingginyu.jpg')
+         .addImage('mingginyu.jpg')
          .setLanguages([SKILL.LANG.HTMLCSS, SKILL.LANG.JAVASCRIPT, SKILL.LANG.SPRING])
          .setPeriod('2016')
          .setSubtitle('IoT 스마트 화분')
@@ -143,7 +147,7 @@ export default {
 
       Portfolio.create('씨엔티테크㈜ 홈페이지')
          .setLink('http://www.cntt.co.kr')
-         .addImage('/images/portfolios/cnttech.png')
+         .addImage('cnttech.png')
          .setLanguages([SKILL.LANG.HTMLCSS, SKILL.LANG.JAVASCRIPT, SKILL.LANG.ASP, SKILL.DB.MSSQL])
          .setPeriod('2015')
          .setSubtitle('당시 재직중이던 회사의 홈페이지 개발')
@@ -153,7 +157,7 @@ export default {
 
       Portfolio.create('피자알볼로 홈페이지 & 주문시스템')
          .setLink('https://www.pizzaalvolo.co.kr')
-         .addImage('/images/portfolios/pizzaalvolo.jpg')
+         .addImage('pizzaalvolo.jpg')
          .setLanguages([SKILL.LANG.HTMLCSS, SKILL.LANG.JAVASCRIPT, SKILL.LANG.ASP, SKILL.DB.MSSQL])
          .setPeriod('2015', '2016')
          .setSubtitle('홈페이지 및 온라인 주문시스템 개발')
@@ -168,7 +172,7 @@ export default {
 
       Portfolio.create('피자마루 홈페이지')
          .setLink('http://www.pizzamaru.co.kr')
-         .addImage('/images/portfolios/pizzamaru.jpg')
+         .addImage('pizzamaru.jpg')
          .setLanguages([SKILL.LANG.HTMLCSS, SKILL.LANG.JAVASCRIPT, SKILL.LANG.NET, SKILL.DB.MSSQL])
          .setPeriod('2015', '2016')
          .setSubtitle('홈페이지 개발')
@@ -179,7 +183,7 @@ export default {
 
       Portfolio.create('모스버거 주문시스템')
          .setLink('http://delivery.moskorea.kr/')
-         .addImage('/images/portfolios/mosburger.jpg')
+         .addImage('mosburger.jpg')
          .setLanguages([SKILL.LANG.HTMLCSS, SKILL.LANG.JAVASCRIPT, SKILL.LANG.NET, SKILL.DB.MSSQL])
          .setPeriod('2015', '2016')
          .setSubtitle('홈페이지, 주문시스템 개발')
@@ -189,7 +193,7 @@ export default {
 
       Portfolio.create('처갓집치킨 홈페이지')
          .setLink('http://www.cheogajip.co.kr')
-         .addImage('http://www.cheogajip.co.kr/theme/v2/img/logo.png')
+         .addImage('cheogajip.png')
          .setLanguages([SKILL.LANG.HTMLCSS, SKILL.LANG.JAVASCRIPT, SKILL.LANG.NET, SKILL.DB.MSSQL])
          .setPeriod('2016')
          .setSubtitle('홈페이지 개발')
@@ -200,7 +204,7 @@ export default {
 
       Portfolio.create('피자알볼로 웹 애플리케이션')
          .setLink('https://play.google.com/store/apps/details?id=m.pizzaalvolo&hl=ko')
-         .addImage('https://lh3.googleusercontent.com/J6iOY6MlctxMsbrywU6cL3KUdWus5Md9mVtuAHdZ5PR2bpIUjRclJJUduIcQ4H0LUco=s180-rw')
+         .addImage('pizzaalvolo.png')
          .setLanguages([SKILL.LANG.ANDROID, SKILL.LANG.OBJECTIVEC])
          .setPeriod('2016')
          .setSubtitle('웹 애플리케이션 개발')
@@ -213,7 +217,7 @@ export default {
 
       Portfolio.create('미스터피자 웹 애플리케이션')
          .setLink('https://play.google.com/store/apps/details?id=com.mrpizza.android')
-         .addImage('https://lh3.ggpht.com/UP1Khvc0Z-cQ3aiMAhTwRbcrLqBKvL-iAlU7bwbem0T6LcoVzCN0zF9NBxT0qp67rQ=s180-rw')
+         .addImage('mrpizza.png')
          .setLanguages([SKILL.LANG.ANDROID, SKILL.LANG.OBJECTIVEC])
          .setPeriod('2016')
          .setSubtitle('웹 애플리케이션 개발')
@@ -223,7 +227,7 @@ export default {
 
       Portfolio.create('더 콘테스트')
          .setLink('https://play.google.com/store/apps/details?id=kr.co.thecontest.theconapp')
-         .addImage('https://lh3.googleusercontent.com/o6pQ5lE6vMQDvpdyhYgpTa9n__0n85bUkHS3na-H09ctazG0oCvLFrBdZYP7qdLwHgPz=s180-rw')
+         .addImage('thecontest.png')
          .setLanguages([SKILL.LANG.ANDROID, SKILL.LANG.OBJECTIVEC])
          .setPeriod('2016')
          .setSubtitle('네이티브 애플리케이션 개발')
