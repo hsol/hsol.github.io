@@ -1,0 +1,53 @@
+@import "const";
+
+$backgrounds: (
+  full-1: '/images/backgrounds/full_01.jpg',
+  full-2: '/images/backgrounds/full_02.jpg',
+  full-3: '/images/backgrounds/full_03.jpg',
+  full-4: '/images/backgrounds/full_04.jpg',
+);
+
+@each $key, $image in $backgrounds {
+  .has-bg-#{$key} {
+    background-size: cover;
+    background-position: center;
+    background-image: url(#{$image});
+    background-attachment: fixed;
+    background-repeat: unset;
+  }
+}
+
+@each $level in $bulma-levels {
+  @each $direction in $directions {
+    .has-margin-#{$direction}-#{$level * 5} {
+      margin-#{$direction}: #{$level * 5}px;
+    }
+    .has-padding-#{$direction}-#{$level * 5} {
+      padding-#{$direction}: #{$level * 5}px;
+    }
+  }
+
+  .z-index-#{$level} {
+    z-index: $level;
+  }
+
+  .has-text-shadow-#{$level} {
+    text-shadow: 0 #{$level}px #{$level}px rgba(0, 0, 0, 0.45);
+  }
+
+  .is-darken-#{$level} {
+    $value-decimal: 0.1 * $level;
+    position: relative;
+
+    &:after {
+      content: '\A';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba($black, $value-decimal);
+      z-index: 0;
+    }
+  }
+}

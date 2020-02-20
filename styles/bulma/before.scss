@@ -1,0 +1,12 @@
+/* font cdn */
+@import url(https://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url(https://fonts.googleapis.com/css?family=Hammersmith+One:400);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+@import "~bulma/sass/utilities/initial-variables";
+
+$family-sans-serif: 'Hammersmith One', 'Jeju Gothic', 'Malgun Gothic', 'Open Sans', "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+$body-background-color: #34495e;
+
+$link-hover: $cyan;
+$link-hover-border: $cyan;
