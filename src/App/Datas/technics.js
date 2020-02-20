@@ -12,7 +12,7 @@ export default {
       },
       '도구': {
          '협업': 'VCS(Git, SVN), Github, Asana, JIRA, Confluence, Slack ...',
-         '개발': 'IntelliJ IDEA(WebStorm, PhpStorm, DataGrip ... ), Eclipse, Visual Studio ...',
+         '개발': 'IntelliJ IDEA(PyCharm, WebStorm, PhpStorm, DataGrip ... ), Eclipse, Visual Studio ...',
          '문서': 'MS-Word, MS-PowerPoint, MS-Excel ...',
          '이미지': 'Adobe Photoshop, Adobe illustrator ...',
       }
