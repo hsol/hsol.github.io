@@ -15,7 +15,7 @@ export default class ProfileSection extends React.Component {
                <div className="columns is-clearfix">
                   <div className="column is-clearfix is-pulled-right">
                      <figure className="image is-384x384 is-pulled-right is-desktop">
-                        <img src="./images/profile.png"/>
+                        <img src="./images/profile.jpg"/>
                      </figure>
                   </div>
                   <ul className="column is-pulled-left">
