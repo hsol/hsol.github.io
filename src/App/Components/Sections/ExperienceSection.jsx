@@ -23,7 +23,7 @@ export default class ExperienceSection extends React.Component {
       if (acc[itemYear] === undefined) {
          acc[itemYear] = [];
          acc[itemYear].push(<li key={itemYear}
-                                className="is-size-4 has-margin-top-5 has-margin-bottom-5">{itemYear}</li>);
+                                className="is-size-4 has-margin-top-30 has-margin-bottom-5">{itemYear}</li>);
       }
       acc[itemYear].push((<li key={index}>{item.description}</li>));
 
