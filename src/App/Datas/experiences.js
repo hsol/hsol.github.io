@@ -25,5 +25,7 @@ export default {
       { datetime: '2018-10-11', description: 'DEVIEW 2018' },
       { datetime: '2018-11-12', description: '리디(주) 퇴사' },
       { datetime: '2018-11-26', description: '(주)비바리퍼블리카 입사' },
+      { datetime: '2019-01-01', description: '(주)비바리퍼블리카 재직' },
+      { datetime: '2020-01-01', description: '(주)비바리퍼블리카 재직' },
    ]
 }
