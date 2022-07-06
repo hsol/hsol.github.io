@@ -36,7 +36,7 @@
     "aos": "^2.3.4",
     "bulma": "^0.7.1",
     "bulma-extensions": "^2.2.2",
-    "moment": "^2.22.2",
+    "moment": "^2.29.4",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-sticky-fill": "^0.8.4"
