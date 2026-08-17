@@ -1,6 +1,11 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
+import {
+  LANG_INIT_COOKIE,
+  LANG_INIT_COOKIE_MAX_AGE,
+  langFromEntryPath,
+} from "@/lib/i18n/lang-entry";
 import { MANAGE_COOKIE, verifySession } from "@/lib/manage-auth";
 
 /**
@@ -20,7 +25,27 @@ export async function middleware(req: NextRequest) {
   // 포트가 붙는 로컬/프리뷰 대비해 host 는 콜론 앞부분만 본다.
   const host = req.headers.get("host")?.split(":")[0] ?? "";
 
-  // 1) 뉴스 서브도메인 rewrite (메인 도메인이 아니면 여기서 처리하고 끝).
+  // 1) 언어 진입 경로 — /en, /ko 로 들어오면 그 언어를 쿠키에 심고 루트로 보낸다.
+  //    호스트 판정보다 먼저 두어 news.hsol.info/en 도 같은 규칙으로 동작하게 한다
+  //    (뉴스 rewrite 를 먼저 태우면 /news/en 이 되어 404 로 떨어진다).
+  const entryLang = langFromEntryPath(req.nextUrl.pathname);
+  if (entryLang) {
+    const home = new URL("/", req.url);
+    // 308 이 아니라 307 — 브라우저가 영구 캐시하면 나중에 진입 규칙을 바꿀 수 없다.
+    const redirect = NextResponse.redirect(home, 307);
+    redirect.cookies.set(LANG_INIT_COOKIE, entryLang, {
+      path: "/",
+      maxAge: LANG_INIT_COOKIE_MAX_AGE,
+      sameSite: "lax",
+      // httpOnly 를 켜면 안 된다 — 클라이언트 부트스트랩이 읽어서 localStorage 로 옮긴다.
+      httpOnly: false,
+    });
+    // 진입 전용 경로라 색인 대상이 아니다.
+    redirect.headers.set("X-Robots-Tag", "noindex, nofollow");
+    return redirect;
+  }
+
+  // 2) 뉴스 서브도메인 rewrite (메인 도메인이 아니면 여기서 처리하고 끝).
   if (host === NEWS_HOST) {
     const { pathname } = req.nextUrl;
     // 이미 /news 접두면 그대로 — 이중 접두(/news/news)·무한 재작성 방지.
@@ -39,7 +64,7 @@ export async function middleware(req: NextRequest) {
     return NextResponse.rewrite(url);
   }
 
-  // 2) /manage 게이트 — 유효한 세션 쿠키가 없으면 Sign in with Vercel 로 보낸다.
+  // 3) /manage 게이트 — 유효한 세션 쿠키가 없으면 Sign in with Vercel 로 보낸다.
   //    콜백/로그인 라우트(/api/*)는 아래 matcher 에서 제외돼 스스로를 막지 않는다.
   const { pathname, search } = req.nextUrl;
   if (pathname === "/manage" || pathname.startsWith("/manage/")) {

@@ -11,6 +11,8 @@
  * (원문이 기본이라 가장 안전). `[data-no-translate]` 하위(언어 토글·Ask 도크 등)는 건드리지 않는다.
  */
 
+import { LANG_INIT_COOKIE } from "./lang-entry";
+
 const LANG_KEY = "hsol-lang";
 const HANGUL = /[가-힣]/;
 
@@ -54,6 +56,22 @@ export function setPreferredLang(lang: PageLang): void {
   } catch {
     /* localStorage 사용 불가(프라이빗 모드 등) — 무시 */
   }
+}
+
+/**
+ * 미들웨어가 언어 진입 경로(/en, /ko)에서 심은 일회용 쿠키를 읽고 즉시 지운다.
+ * 진입 경로가 아니었다면 null 을 돌려준다. 지우는 이유는 다음 방문까지 남아
+ * 사용자가 토글로 바꾼 언어를 되돌려 버리는 사고를 막기 위해서다.
+ */
+export function consumeLangInitCookie(): PageLang | null {
+  if (typeof document === "undefined") return null;
+  const match = document.cookie.match(
+    new RegExp(`(?:^|;\\s*)${LANG_INIT_COOKIE}=([^;]*)`),
+  );
+  if (!match) return null;
+  // 읽는 즉시 만료시킨다(미들웨어와 같은 path 여야 실제로 지워진다).
+  document.cookie = `${LANG_INIT_COOKIE}=; path=/; max-age=0`;
+  return match[1] === "en" ? "en" : "ko";
 }
 
 let cachedTranslator: TranslatorInstance | null = null;
