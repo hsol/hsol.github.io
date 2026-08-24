@@ -17,6 +17,8 @@ import { NEWS_URL } from "@/lib/news/seo";
 import {
   enableEnglishMode,
   getPreferredLang,
+  isOutsideKorea,
+  langHintMessage,
   setPreferredLang,
   translatorSupported,
 } from "@/lib/i18n/page-translate";
@@ -283,16 +285,22 @@ export function PlanDiagram({
  * EN을 누르면 브라우저 내장(온디바이스) 번역 API로 본문을 그 자리에서 영어로 바꾼다
  * (한국에서도 동작). KO는 새로고침으로 원문 복귀. 내장 API가 없는 브라우저(사파리·
  * 파이어폭스 등)에서는 짧은 안내를 띄워 브라우저 자체 번역 기능을 쓰도록 한다.
+ *
+ * 접속 위치가 한국 밖이면 서버 렌더가 한국어인 걸 모르고 떠날 수 있으므로, 누르기 전에
+ * 먼저 영어 안내를 띄워 EN 으로 유도한다. 안내문은 읽을 사람이 영어권이라 영어로 쓰고,
+ * 이 토글 전체가 `[data-no-translate]` 안이라 번역에 다시 갈리지 않는다.
  */
 export function LangToggle({ className = "" }: { className?: string }) {
   const [mode, setMode] = useState<"ko" | "en">("ko");
   const [supported, setSupported] = useState(true);
   const [pending, setPending] = useState(false);
   const [hint, setHint] = useState(false);
+  const [intl, setIntl] = useState(false);
 
   useEffect(() => {
     setMode(getPreferredLang());
     setSupported(translatorSupported());
+    setIntl(isOutsideKorea());
   }, []);
 
   const toKo = useCallback(() => {
@@ -324,6 +332,10 @@ export function LangToggle({ className = "" }: { className?: string }) {
     }
   }, [mode, pending]);
 
+  // 클릭 실패 안내가 있으면 그게 우선, 없으면 해외 접속 유도 안내.
+  // 두 경우 다 기존 `.lang-hint` 한 칸을 쓴다 — 자리·폭이 이미 잡혀 있다.
+  const message = langHintMessage({ intl, supported, mode, failed: hint });
+
   return (
     <div
       className={"lang-toggle" + (className ? ` ${className}` : "")}
@@ -353,11 +365,9 @@ export function LangToggle({ className = "" }: { className?: string }) {
       >
         {pending ? "…" : "EN"}
       </button>
-      {hint && (
-        <span className="lang-hint" role="status">
-          {supported
-            ? "번역 모델을 불러오지 못했어요. 잠시 후 다시 시도해 주세요."
-            : "이 브라우저에선 주소창·우클릭의 번역 기능을 사용해 주세요."}
+      {message && (
+        <span className="lang-hint" role="status" lang={intl ? "en" : "ko"}>
+          {message}
         </span>
       )}
     </div>

@@ -10,7 +10,7 @@
  * 흩어져 있던 규칙의 출처:
  *  - 관점 키        : portfolio-types.ts `PERSONA_PATH_KEYS`
  *  - 라우트 검증     : app/[[...persona]]/page.tsx (notFound)
- *  - sitemap        : src/lib/seo/sitemap.ts (PERSONA_PATH_KEYS + /architecture + 루트)
+ *  - sitemap        : src/lib/seo/sitemap.ts (이 파일의 inSitemap + EXTRA_ROUTES + SUBDOMAIN_ENTRIES)
  *  - career tier 검증 : content/schema.ts superRefine
  * 이들이 모두 이 SSOT 를 참조하도록 점진 이관한다.
  */
