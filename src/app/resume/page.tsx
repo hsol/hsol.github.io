@@ -11,7 +11,7 @@ export const dynamic = "force-dynamic";
 
 const PAGE_TITLE = "임한솔 이력서·포트폴리오 (Hansol Lim Resume)";
 const PAGE_DESCRIPTION =
-  "임한솔(Hansol Lim) 이력서·포트폴리오 원페이저. 12년 차 개발자에서 프루퍼 CEO·PPB 플랫폼팀 팀장까지 — 마진 개선·운영 효율화 등 사업 가치 중심 성과와 경력을 한 장에 정리하고 PDF로 내려받을 수 있습니다.";
+  "임한솔(Hansol Lim) 이력서·포트폴리오 원페이저. 개발자로 10년, 프루퍼 CEO·PPB 플랫폼팀 팀장까지 — 마진 개선·운영 효율화 등 사업 가치 중심 성과와 경력을 한 장에 정리하고 PDF로 내려받을 수 있습니다.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,

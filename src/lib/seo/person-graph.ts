@@ -15,7 +15,7 @@ export const PROOFER_ID = "https://proofer.tech/#organization";
 
 /** site-data 에 없는 큐레이트 상수(동명이인 구분·외부 프로필). */
 const DISAMBIGUATING =
-  "정의당 정치인·법무법인 광장 조세변호사·한밭대 교수·뮤지컬배우 임한솔과 동명이인인, 씨엔티테크→리디북스→토스를 거친 12년차 소프트웨어 엔지니어이자 스타트업 대표 임한솔.";
+  "정의당 정치인·법무법인 광장 조세변호사·한밭대 교수·뮤지컬배우 임한솔과 동명이인인, 씨엔티테크→리디북스→토스를 거쳐 개발자로 10년을 일하고 지금은 프루퍼 대표이자 PPB Studios 플랫폼팀 팀장인 임한솔.";
 const SAME_AS = [
   "https://blog.hsol.info",
   "https://www.linkedin.com/in/hsolim/",
