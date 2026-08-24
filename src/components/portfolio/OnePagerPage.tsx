@@ -7,6 +7,7 @@ import { Foot, useSiteData } from "@/components/portfolio/Atoms";
 import { DeferredChatDock } from "@/components/DeferredChatDock";
 import type { AskHansolPageContext } from "@/lib/ask-hansol/client";
 import { trackEvent } from "@/lib/analytics";
+import { useResumePdfHref } from "@/lib/i18n/use-resume-pdf-href";
 
 // 이력서 독자는 채용·협업 평가 맥락이라 Ask Hansol 을 hire 관점으로 띄운다.
 const ASK_CONTEXT: AskHansolPageContext = {
@@ -131,6 +132,7 @@ export function OnePagerPage({ html }: { html: string | null }) {
   const reduceMotion = useReducedMotion();
   const sheetRef = useRef<HTMLDivElement>(null);
   const { name, nameEn } = useSiteData().identity;
+  const pdfHref = useResumePdfHref();
 
   useEffect(() => {
     if (!html) return;
@@ -197,7 +199,7 @@ export function OnePagerPage({ html }: { html: string | null }) {
         <button type="button" className="op-fab" onClick={() => router.push("/")}>
           ← 홈
         </button>
-        <a className="op-fab primary" href="/resume/pdf" download onClick={() => trackEvent("resume_pdf_download")}>
+        <a className="op-fab primary" href={pdfHref} download onClick={() => trackEvent("resume_pdf_download")}>
           ↓ PDF 다운로드
         </a>
       </nav>

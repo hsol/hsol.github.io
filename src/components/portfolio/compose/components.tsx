@@ -13,6 +13,7 @@
 
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { useResumePdfHref } from "@/lib/i18n/use-resume-pdf-href";
 import {
   Back,
   CareerList,
@@ -322,6 +323,7 @@ export function ResumeCTABound({
 }: {
   props: { title?: string; sub?: string };
 }) {
+  const pdfHref = useResumePdfHref();
   return (
     <div className="cz-resume">
       <div className="cz-resume-text">
@@ -333,7 +335,7 @@ export function ResumeCTABound({
         <Link className="cz-resume-btn" href="/resume">
           한 장으로 보기 →
         </Link>
-        <a className="cz-resume-btn cz-resume-btn-ghost" href="/resume/pdf" download>
+        <a className="cz-resume-btn cz-resume-btn-ghost" href={pdfHref} download>
           PDF 다운로드 ↓
         </a>
       </div>

@@ -136,6 +136,19 @@ export function getPreferredLang(): PageLang {
   }
 }
 
+/**
+ * 언어가 바뀌었을 때 알려줄 구독자들. localStorage 는 같은 탭에서 storage 이벤트를 쏘지 않고
+ * KO→EN 전환은 리로드도 없어서(EN→KO 만 리로드), 마운트 때 한 번 읽는 것으로는 최신을 못 본다.
+ * 언어에 따라 화면 밖 값(예: PDF 다운로드 링크의 lang 파라미터)을 바꾸는 쪽이 여기에 붙는다.
+ */
+const langListeners = new Set<(lang: PageLang) => void>();
+
+/** 언어 변경 구독. 해제 함수를 돌려준다. */
+export function onLangChange(listener: (lang: PageLang) => void): () => void {
+  langListeners.add(listener);
+  return () => langListeners.delete(listener);
+}
+
 export function setPreferredLang(lang: PageLang): void {
   if (typeof window === "undefined") return;
   try {
@@ -144,6 +157,8 @@ export function setPreferredLang(lang: PageLang): void {
   } catch {
     /* localStorage 사용 불가(프라이빗 모드 등) — 무시 */
   }
+  // 저장 실패(프라이빗 모드)여도 통지한다 — 이 세션의 화면 상태는 실제로 바뀌었다.
+  for (const listener of langListeners) listener(lang);
 }
 
 /**
