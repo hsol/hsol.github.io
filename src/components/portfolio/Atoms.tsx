@@ -19,7 +19,9 @@ import {
   getPreferredLang,
   isOutsideKorea,
   langHintMessage,
+  onEnglishEntryFailure,
   setPreferredLang,
+  takeEnglishEntryFailure,
   translatorSupported,
 } from "@/lib/i18n/page-translate";
 
@@ -296,12 +298,29 @@ export function LangToggle({ className = "" }: { className?: string }) {
   const [pending, setPending] = useState(false);
   const [hint, setHint] = useState(false);
   const [intl, setIntl] = useState(false);
+  const [enEntry, setEnEntry] = useState(false);
+
+  /**
+   * `/en` 진입 실패 — KO 로 되돌아온 상태를 그대로 보여주고 사정을 설명한다.
+   * 클릭 실패와 달리 자동으로 감추지 않는다. 이 방문자에게는 이게 유일한 설명이라
+   * 7초 뒤 사라지면 화면은 다시 "영문판인 줄 알았던 한국어"로 남는다.
+   */
+  const onEntryFailure = useCallback((reason: string) => {
+    setMode("ko");
+    setSupported(reason !== "unsupported");
+    setEnEntry(true);
+    setHint(true);
+  }, []);
 
   useEffect(() => {
     setMode(getPreferredLang());
     setSupported(translatorSupported());
     setIntl(isOutsideKorea());
-  }, []);
+    // 구독 전에 이미 실패했을 수 있다(미지원 브라우저는 부트스트랩에서 동기 판정).
+    const pending = takeEnglishEntryFailure();
+    if (pending) onEntryFailure(pending);
+    return onEnglishEntryFailure(onEntryFailure);
+  }, [onEntryFailure]);
 
   const toKo = useCallback(() => {
     if (mode === "ko" || pending) return;
@@ -334,7 +353,7 @@ export function LangToggle({ className = "" }: { className?: string }) {
 
   // 클릭 실패 안내가 있으면 그게 우선, 없으면 해외 접속 유도 안내.
   // 두 경우 다 기존 `.lang-hint` 한 칸을 쓴다 — 자리·폭이 이미 잡혀 있다.
-  const message = langHintMessage({ intl, supported, mode, failed: hint });
+  const message = langHintMessage({ intl, enEntry, supported, mode, failed: hint });
 
   return (
     <div
