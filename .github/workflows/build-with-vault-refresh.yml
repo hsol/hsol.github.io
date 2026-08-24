@@ -65,6 +65,21 @@ jobs:
           EDGE_CONFIG: ${{ secrets.EDGE_CONFIG }}
         run: npm run content:refresh:claude
 
+      # 번역 스텝이 쪽수 검증에 Playwright 를 쓰고, PDF 스텝이 같은 렌더러를 쓴다. 한 번만 깐다.
+      - name: Install Playwright chromium and CJK fonts
+        run: |
+          npx playwright install --with-deps chromium
+          # PDF 한글 깨짐 방지용 CJK 폰트.
+          sudo apt-get install -y fonts-noto-cjk
+
+      - name: Translate one-pager to English
+        env:
+          # KO 원페이저를 영어로 옮긴다(vault 재생성이 아니라 번역 — KO 가 단일 진실 원천).
+          # KO 가 안 바뀌었으면 스크립트가 해시로 판단해 모델을 부르지 않는다.
+          AI_GATEWAY_API_KEY: ${{ secrets.AI_GATEWAY_API_KEY }}
+          AI_GATEWAY_MODEL: anthropic/claude-opus-4.7
+        run: npm run content:translate:onepager
+
       - name: Commit and push vault updates to hsol-info-blob submodule
         env:
           TOKEN: ${{ secrets.SUBMODULES_PAT }}
@@ -75,6 +90,7 @@ jobs:
           SITE_FILE="vault/object-views/site-data.json"
           REF_FILE="vault/object-views/hsol-info-parent-ref.json"
           ONEPAGER_FILE="vault/object-views/onepager-ko.html"
+          ONEPAGER_EN_FILE="vault/object-views/onepager-en.html"
           cd hsol-info-blob
           git remote set-url origin "https://x-access-token:${TOKEN}@github.com/hsol/hsol-info-blob.git"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -84,7 +100,7 @@ jobs:
           # stash/pop 은 onepager 가 main 에선 추적·여기선 미추적이라 'already exists'로 충돌하므로 백업 방식으로 회피.
           TMP="$(mktemp -d)"
           CHANGED=""
-          for f in "$SITE_FILE" "$ONEPAGER_FILE"; do
+          for f in "$SITE_FILE" "$ONEPAGER_FILE" "$ONEPAGER_EN_FILE"; do
             if [ -n "$(git status --porcelain --untracked-files=all -- "$f" 2>/dev/null || true)" ]; then
               install -D "$f" "$TMP/$f"
               CHANGED="$CHANGED $f"
@@ -134,11 +150,7 @@ jobs:
         env:
           # 없으면 로컬 PDF만 만들고 업로드는 graceful skip(빌드 실패 안 함).
           BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
-        run: |
-          npx playwright install --with-deps chromium
-          # PDF 한글 깨짐 방지용 CJK 폰트.
-          sudo apt-get install -y fonts-noto-cjk
-          npm run content:generate:onepager-pdf
+        run: npm run content:generate:onepager-pdf
 
       - name: Lint
         run: npm run lint

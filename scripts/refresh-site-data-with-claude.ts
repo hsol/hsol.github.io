@@ -7,6 +7,7 @@ import { anthropic } from "@ai-sdk/anthropic";
 import { gatewayModel } from "../src/lib/llm";
 import { siteDataSchema, type SiteData } from "../src/content/schema";
 import { stripAiTypographyDeep } from "../src/lib/ai-typography";
+import { SELF_DESIGNATION_RULE, selfDesignationHint } from "../src/lib/self-designation";
 import { HSOL_DATA } from "../src/data/site";
 import { layoutSchema, type SiteLayout } from "../src/content/layout-types";
 import { DEFAULT_LAYOUT } from "../src/content/default-layout";
@@ -994,6 +995,8 @@ ${targetPaths.map((p) => `- ${p}`).join("\n")}
 - value 는 [현재 site-data.json]의 해당 위치와 같은 형태(타입·필드)로 그 위치 값 전체를 준다. 배열 인덱스는 [현재 site-data.json]의 순서를 그대로 세어 정확히 지목한다.
 - 실제로 바뀔 게 없는 경로는 edits 에서 빼라(억지로 채우지 마라).
 
+${SELF_DESIGNATION_RULE}
+
 규칙:
 1) 근거: 새 값은 아래 [바뀐 vault 컨텍스트]에 실제로 있는 사실·고유명사·기간·수치로만. 증거 없는 추측·새 주장·새 수치 금지. 애매하면 현재 값 유지(그 경로 제외).
 2) 산문 문체(방문자 노출 서술 전반): 존댓말. 문단·줄글 첫 문장을 "저는/임한솔은/본인은" 같은 1인칭·이름 고정 템플릿으로 시작하지 않는다(인접 두 문장 연속 1인칭 주어 금지). AI 티 특수문자(엠대시 —, 엔대시 –, 말줄임표 …, 곡선따옴표 " " ' ')는 쓰지 않고 하이픈·마침표·쉼표·괄호·곧은따옴표만.
@@ -1580,6 +1583,8 @@ async function generateComposition(
   // 캐시 히트된다(입력 토큰 ~90% 절감). 페이지별로 달라지는 건 전부 perPageBody(캐시 breakpoint 뒤)로.
   const sharedPrefix = `너는 hsol.info 포트폴리오의 **컴포지션 빌더**다. 대상 페이지를 디자인시스템 컴포넌트의 **트리**로 조합하고, content 컴포넌트의 내용을 **vault 근거로 직접 작성**한다.
 
+${SELF_DESIGNATION_RULE}
+
 원칙(중요):
 1) **앵커 후 진화**: 아래 "현재 composition"이 있으면 그것을 기준으로 통째로 갈아엎지 말고 근거 있는 1~3가지 개선만 적용한다. 없으면 페이지 성격에 맞게 새로 구성한다.
 2) **카탈로그 안에서만**: [컴포넌트 카탈로그]의 component 만 쓴다. container 만 children 을 가진다. data-bound 컴포넌트는 배치만(내용은 site-data 에서 자동) — props 로 내용을 지어내지 마라. **data-bound 와 내용 중복 금지**: data-bound(특히 Writing 은 블로그·출판물·뉴스레터를 자동으로 다 보여준다)를 배치하면, 그 안에 이미 나오는 항목(예: 그 책·그 뉴스레터)을 Callout/CardGrid/Prose 로 또 만들지 마라 — 같은 항목이 두 번 보인다.
@@ -1599,7 +1604,7 @@ async function generateComposition(
    - dataSection: **필수**. 짧은 소문자 슬러그(identity·now·methods·career·skills·writing·links…). Ask '지금 보는 섹션' 추적에 쓰이므로 어느 섹션도 빠뜨리면 안 된다.
    - **meta 프롭은 쓰지 마라**: Section 의 meta 는 헤더 우측에 라벨을 또 렌더해서 eyebrow 와 이중 표기가 된다. 영문 라벨 채널은 eyebrow 하나뿐이다.
    즉 한쪽은 영문 제목·다른 쪽은 한글 제목, 한쪽은 괄호 안 라벨·다른 쪽은 우측 meta 라벨처럼 **페이지마다 헤더 형식이 다른 것은 금지**. 형제가 아직 없으면 네가 이 규약의 기준이 된다.
-7) **기술/스택은 '범위 신호'로만(헤드라인 금지)**: 기술 나열이 한 사람을 'X·Y·Z 밖에 못 하는 사람'으로 축소시키면 안 된다(12년차 엔지니어→대표·팀장 포지셔닝과 충돌).
+7) **기술/스택은 '범위 신호'로만(헤드라인 금지)**: 기술 나열이 한 사람을 'X·Y·Z 밖에 못 하는 사람'으로 축소시키면 안 된다(엔지니어 출신 → 대표·팀장 포지셔닝과 충돌).
    - **회사별·시기별로 기술을 쪼개 나열 금지**(예: "토스: Django, Flask, React" 식). 한정돼 보인다.
    - 스택은 **통합해 한 번만**(프로그래밍 언어 + 핵심 프레임워크), 그것도 **builder 관점에서만** 구체적으로(Skills). hire 는 가볍게, **collab·curious 는 기술 나열 섹션을 두지 말고** 역량·도메인·만든 것으로 대체.
    - 헤드라인은 **'무엇을 끝까지 책임질 수 있는가'(역량·도메인·임팩트)**. 기술은 그 보조 신호일 뿐.
@@ -1685,6 +1690,8 @@ ${anchor}`;
     const parsed = pageCompositionSchema.safeParse(rawComposition);
     if (parsed.success) {
       const nodeErrors = validateCompositionNodes(parsed.data.nodes);
+      const designationHint = selfDesignationHint(parsed.data.nodes);
+      if (designationHint) nodeErrors.push(designationHint);
       if (nodeErrors.length === 0) {
         // 불변식(하드 가드): collab 관점엔 자문 진입점(AdviceCTA)이 반드시 있어야 한다.
         // 프롬프트 지침(8-1)만으론 LLM 이 누락할 수 있으므로, 없으면 결정적으로 주입한다.
@@ -1762,6 +1769,8 @@ const ONEPAGER_DESIGN_SPEC = `
 [문체 — 중요(한국식 존댓말)]
 - 서술형 문장(요약·포지셔닝 문단, 프로젝트 설명 등 "문장으로 읽히는" 부분)은 **존댓말 "~합니다/~입니다"** 로 쓴다. "~다/~임/~함" 같은 평서·개조식 종결을 서술 문장에 쓰지 않는다.
 - 단, **정량 데이터·항목 나열형 불릿**(핵심 성과·경력 임팩트 불릿처럼 사실·수치 위주로 짧게 끊는 부분)은 개조식(명사·동사 어간 종결, 예: "...로 단축", "...설계", "...승소")로 간결하게 둬도 된다. 즉 줄글은 존댓말, 팩트 불릿은 개조식.
+
+${SELF_DESIGNATION_RULE}
 
 [사실·표기 규칙]
 - 불릿은 핵심을 앞에, 1~2줄. XYZ("X를 Y만큼, Z로 달성")/PAR 패턴. 가능하면 정량화. 1인칭 대명사 금지.
@@ -1895,6 +1904,8 @@ ${args.contextText}
     if (!/<style[\s>]/i.test(html)) problems.push("inline <style> 가 없다.");
     if (!/@page/i.test(html)) problems.push("@page A4 규칙이 없다.");
     if (!/class\s*=\s*["']onepager/i.test(html)) problems.push('루트가 <article class="onepager"> 가 아니다.');
+    const designationHint = selfDesignationHint(html);
+    if (designationHint) problems.push(designationHint);
     if (problems.length === 0) {
       logStep(`One-pager generated (attempt ${attempt}, mode=${mode}). changes: ${changes.join(" | ") || "(none)"}`);
       return { html, mode, changes };
@@ -1992,6 +2003,8 @@ async function main() {
   const basePrompt = `
 너는 vault 내용을 읽고 site-data.json을 갱신하는 데이터 편집기다.
 
+${SELF_DESIGNATION_RULE}
+
 규칙:
 1) 반드시 ${EMIT_TOOL_NAME} tool_use로만 결과를 반환한다. 일반 텍스트 답변 금지.
 2) 출력 JSON은 스키마와 동일한 최상위 키·형태를 유지한다(루트 래핑 금지). 필드 키는 템플릿과 1:1(번역·이름 변경 금지). room·coord 등 템플릿 고정 UI 메타는 바꾸지 않는다.
@@ -2045,6 +2058,11 @@ ${contextText}
         contextText,
         targetPaths: patchTargets,
       });
+      const patchDesignationHint = siteData ? selfDesignationHint(siteData) : null;
+      if (patchDesignationHint) {
+        logStep(`siteData PATCH 폐기 - 표기 정본 위반:\n${patchDesignationHint}`);
+        siteData = null;
+      }
       logStep(
         siteData
           ? "siteData PATCH 성공 — 대상 키만 갱신, 나머지 유지."
@@ -2095,6 +2113,13 @@ ${contextText}
       }
     }
     if (validated.success) {
+      // 표기 정본 가드 — 연차+직함("12년차 개발자")이 섞이면 그 힌트로 재생성한다.
+      const designationHint = selfDesignationHint(validated.data);
+      if (designationHint) {
+        validationHint = designationHint;
+        logStep(`Self-designation check failed on attempt ${attempt}: ${validationHint}`);
+        continue;
+      }
       // AI 티 나는 특수문자(엠대시·말줄임표 문자·곡선따옴표·줄머리 불릿)를 평문으로 정리.
       siteData = stripAiTypographyDeep(validated.data);
       logStep(`Content generated (attempt ${attempt}).`);

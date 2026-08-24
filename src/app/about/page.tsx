@@ -11,7 +11,7 @@ const SITE_URL = "https://hsol.info";
 
 const PAGE_TITLE = "임한솔 (Hansol Lim) — 엔지니어·메이커 | hsol.info";
 const PAGE_DESCRIPTION =
-  "선린인터넷고에서 시작해 토스를 거쳐 프루퍼를 창업한 메이커 임한솔. 같은 이름의 정치인·변호사·교수·뮤지컬 배우와는 다른, 만들면서 답을 찾는 12년 차 소프트웨어 엔지니어의 결·성격·굴곡을 1인칭으로 기록한 소개.";
+  "선린인터넷고에서 시작해 토스를 거쳐 프루퍼를 창업한 메이커 임한솔. 같은 이름의 정치인·변호사·교수·뮤지컬 배우와는 다른, 만들면서 답을 찾는 사람의 결·성격·굴곡을 1인칭으로 기록한 소개.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
