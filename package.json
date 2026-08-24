@@ -9,6 +9,7 @@
     "start": "next start -p 9999",
     "lint": "next lint",
     "content:refresh:claude": "tsx scripts/refresh-site-data-with-claude.ts",
+    "content:translate:onepager": "tsx scripts/translate-onepager.ts",
     "content:generate:site-ts": "tsx scripts/generate-site-ts-from-vault.ts",
     "content:generate:onepager-pdf": "tsx scripts/generate-onepager-pdf.ts",
     "content:layout:snapshot": "tsx scripts/snapshot-layout-to-site-data.ts",
