@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 9999",
-    "prebuild": "tsx scripts/check-self-designation.ts",
+    "prebuild": "npm run check:self-designation",
+    "check:self-designation": "tsx scripts/check-self-designation.ts",
     "build": "next build",
     "start": "next start -p 9999",
     "lint": "next lint",

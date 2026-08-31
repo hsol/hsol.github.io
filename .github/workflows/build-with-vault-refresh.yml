@@ -80,6 +80,13 @@ jobs:
           AI_GATEWAY_MODEL: anthropic/claude-opus-4.7
         run: npm run content:translate:onepager
 
+      # 게이트를 여기서 한 번 더 돌린다. prebuild(Build 스텝)에서도 돌지만, 그건 아래 blob push 와
+      # PDF 업로드가 끝난 뒤라 위반이 이미 배포된 뒤에야 빌드를 세운다 — PDF 는 Blob 에서 바로
+      # 내려가므로 빌드 실패와 무관하게 살아 있다(PRF-149). 재생성 직후·발행 직전이 유일하게
+      # 유효한 지점이다.
+      - name: Gate regenerated one-pager (self-designation)
+        run: npm run check:self-designation
+
       - name: Commit and push vault updates to hsol-info-blob submodule
         env:
           TOKEN: ${{ secrets.SUBMODULES_PAT }}
